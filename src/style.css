@@ -40,7 +40,7 @@ $green:     #859900;
 
 body {
   padding: 25px 36px;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: $base3;
   color: $base00;
 }
@@ -69,10 +69,11 @@ h3 {
 }
 
 .item {
-  margin: 6px 0;
+  margin: 10px 0;
 }
 
 .code {
+
   &::before {
     content: "$ ";
   }
@@ -80,6 +81,7 @@ h3 {
 
 .title {
   padding: 5px 0;
+  color: $blue;
 
   &::after {
     content: ":";

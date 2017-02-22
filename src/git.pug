@@ -7,10 +7,10 @@ html(lang="en")
   body
     h1.subject= title
     .container
-      each block in blocks
+      each collection in collections
         .block
-          h3= block.title
-          each item in block.items
+          h3= collection.title
+          each item in collection.commands
             .item
               .title= item.title
-              code.code= item.code
+              code.code= item.command

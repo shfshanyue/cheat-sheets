@@ -1,19 +1,19 @@
 {
   "title": "Git Cheat Sheet",
-  "blocks": [{
+  "collections": [{
     "title": "git push",
-    "items": [{
+    "commands": [{
       "title": "Pull to remote origin",
-      "code": "git push -u origin master"
+      "command": "git push -u origin master"
     }]
   }, {
     "title": "git add",
-    "items": [{
+    "commands": [{
       "title": "Add all stage",
-      "code": "git add -A"
+      "command": "git add -A"
     }, {
       "title": "Add tracked file stage",
-      "code": "git dd -u"
+      "command": "git add -u"
     }]
   }]
 }

@@ -71,8 +71,7 @@ h1, h2, h3 {
 }
 
 .title {
-  padding: 5px 0;
-  font-size: 0.9rem
+  padding: 5px 0
 }
 
 .title::after {

@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Hello, Tips
+    link(rel='stylesheet', href='style.css')
+  body
+    h1.subject= title
+    .container
+      each block in blocks
+        .block
+          h3= block.title
+          each item in block.items
+            .item
+              .title= item.title
+              code.code= item.code

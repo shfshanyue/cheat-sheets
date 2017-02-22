@@ -1,19 +1,53 @@
 {
   "title": "Git Cheat Sheet",
   "collections": [{
-    "title": "git push",
+    "title": "git config",
     "commands": [{
-      "title": "Pull to remote origin",
+      "title": "",
+      "command": "git config [--global] -e"
+    }, {
+      "title": "",
+      "command": "git config color.ui true",
+    }]
+  }, {
+    "title": "git remote",
+    "commands": [{
+      "title": "添加远程仓库并命名为 origin",
+      "command": "git remote add origin <git-repo>"
+    }, {
+      "title": "",
+      "command": "git remote set-url origin <git-repo>"
+    }, {
+      "title": "列出所有的远程仓库",
+      "command": "git remote -v"
+    }, {
+      "title": "列出远程仓库 origin 的详细信息",
+      "command": "git remote show origin"
+    }, {
+      "title": "推送 master 到远程仓库",
+      "command": "git push origin master"
+    }, {
+      "title": "推送到远程仓库并建立到远程 master 的追踪",
       "command": "git push -u origin master"
+    }, {
+      "command": "git push -n"
     }]
   }, {
     "title": "git add",
     "commands": [{
-      "title": "Add all stage",
+      "title": "添加所有文件到暂存区，包括未追踪文件",
       "command": "git add -A"
     }, {
-      "title": "Add tracked file stage",
+      "title": "更新暂存区文件",
       "command": "git add -u"
+    }, {
+      "title": "交互式添加文件到暂存区",
+      "command": "git add -p"
+    }]
+  }, {
+    "title": "git grep",
+    "commands": [{
+      "command": "git grep hello"
     }]
   }]
 }

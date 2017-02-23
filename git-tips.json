@@ -7,7 +7,7 @@
       "command": "git config [--global] -e"
     }, {
       "title": "",
-      "command": "git config color.ui true",
+      "command": "git config color.ui true"
     }]
   }, {
     "title": "git remote",

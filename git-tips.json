@@ -1,53 +1,494 @@
 {
   "title": "Git Cheat Sheet",
-  "collections": [{
-    "title": "git config",
-    "commands": [{
-      "title": "",
-      "command": "git config [--global] -e"
-    }, {
-      "title": "",
-      "command": "git config color.ui true"
-    }]
-  }, {
-    "title": "git remote",
-    "commands": [{
-      "title": "添加远程仓库并命名为 origin",
-      "command": "git remote add origin <git-repo>"
-    }, {
-      "title": "",
-      "command": "git remote set-url origin <git-repo>"
-    }, {
-      "title": "列出所有的远程仓库",
-      "command": "git remote -v"
-    }, {
-      "title": "列出远程仓库 origin 的详细信息",
-      "command": "git remote show origin"
-    }, {
-      "title": "推送 master 到远程仓库",
-      "command": "git push origin master"
-    }, {
-      "title": "推送到远程仓库并建立到远程 master 的追踪",
-      "command": "git push -u origin master"
-    }, {
-      "command": "git push -n"
-    }]
-  }, {
-    "title": "git add",
-    "commands": [{
-      "title": "添加所有文件到暂存区，包括未追踪文件",
-      "command": "git add -A"
-    }, {
-      "title": "更新暂存区文件",
-      "command": "git add -u"
-    }, {
-      "title": "交互式添加文件到暂存区",
-      "command": "git add -p"
-    }]
-  }, {
-    "title": "git grep",
-    "commands": [{
-      "command": "git grep hello"
-    }]
-  }]
+  "collections": [
+    {
+      "title": "init",
+      "commands": [
+        {
+          "title": "初始化仓库",
+          "command": "git init"
+        }
+      ]
+    },
+    {
+      "title": "config",
+      "commands": [
+        {
+          "title": "编辑配置文件",
+          "command": "git config [--global] -e"
+        },
+        {
+          "title": "列出配置信息",
+          "command": "git config -l"
+        },
+        {
+          "title": "获取相应的配置",
+          "command": "git config --get core.editor"
+        },
+        {
+          "title": "输出彩色信息",
+          "command": "git config color.ui true"
+        },
+        {
+          "title": "设置文件名大小写敏感",
+          "command": "git config core.ignoreCase false"
+        },
+        {
+          "title": "设置推送策略为 simple",
+          "command": "git config push.default simple"
+        },
+        {
+          "title": "设置 git 的编辑器是 vim",
+          "command": "git config --global core.editor vim"
+        },
+        {
+          "title": "",
+          "command": "git config --global alias.co checkout"
+        }
+      ]
+    },
+    {
+      "title": "add / rm / mv",
+      "commands": [
+        {
+          "title": "添加所有文件到暂存区，包括未追踪文件",
+          "command": "git add -A"
+        },
+        {
+          "title": "更新暂存区文件",
+          "command": "git add -u"
+        },
+        {
+          "title": "交互式添加文件到暂存区",
+          "command": "git add -p"
+        },
+        {
+          "title": "工作区与暂存区删除文件",
+          "command": "git rm <file>"
+        },
+        {
+          "title": "仅暂存区删除文件",
+          "command": "git rm --cached <file>"
+        },
+        {
+          "title": "重命名暂存区文件",
+          "command": "git mv <file> <file1>"
+        }
+      ]
+    },
+    {
+      "title": "diff",
+      "commands": [
+        {
+          "title": "显示工作区与暂存区的不同",
+          "command": "git diff"
+        },
+        {
+          "title": "显示暂存区与本地仓库的不同",
+          "command": "git diff --cached"
+        },
+        {
+          "title": "显示工作区，暂存区与本地仓库的不同",
+          "command": "git diff HEAD"
+        },
+        {
+          "title": "仅显示改变的文件",
+          "command": "git diff --name-only"
+        },
+        {
+          "title": "比较两次提交的差异",
+          "command": "git diff <commit> <commit>"
+        },
+        {
+          "title": "显示某次 commit 所做的更改",
+          "command": "git show <commit>"
+        }
+      ]
+    },
+    {
+      "title": "branch / merge / rebase",
+      "commands": [
+        {
+          "title": "列出本地分支",
+          "command": "git branch",
+          "alternatives": [
+            "git branch -l"
+          ]
+        },
+        {
+          "title": "列出本地分支与追踪关系",
+          "command": "git branch -vv"
+        },
+        {
+          "title": "列出远程分支",
+          "command": "git branch -r"
+        },
+        {
+          "title": "列出所有分支",
+          "command": "git branch -a"
+        },
+        {
+          "title": "建立分支不切换工作区",
+          "command": "git branch <branch>"
+        },
+        {
+          "title": "建立分支并切换工作区",
+          "command": "git checkout -b <branch>"
+        },
+        {
+          "title": "切换到最近一次分支",
+          "command": "git checkout -"
+        },
+        {
+          "title": "删除已被合并的分支",
+          "command": "git branch -d <branch>"
+        },
+        {
+          "title": "强制删除未被合并的分支",
+          "command": "git branch -D <branch>",
+          "alternatives": [
+            "git branch --delete --force <branch>"
+          ]
+        },
+        {
+          "title": "更改分支名字",
+          "command": "git branch -m <newbranch>"
+        },
+        {
+          "title": "设置追踪分支",
+          "command": "git branch -u <upstream>"
+        },
+        {
+          "title": "合并 develop 分支到本分支",
+          "command": "git merge develop"
+        },
+        {
+          "title": "强制合并分支后生成 merge commit",
+          "command": "git merge -no-ff develop"
+        },
+        {
+          "title": "变基合并 develop 分支",
+          "command": "git rebase develop"
+        }
+      ]
+    },
+    {
+      "title": "checkout / clean / reset / revert",
+      "commands": [
+        {
+          "title": "重置工作区某文件",
+          "command": "git checkout -- <file>"
+        },
+        {
+          "title": "重置工作区",
+          "command": "git checkout ."
+        },
+        {
+          "title": "列出将要清除的未追踪文件",
+          "command": "git clean -n"
+        },
+        {
+          "title": "清除未追踪文件",
+          "command": "git clean -f"
+        },
+        {
+          "title": "清除忽略文件",
+          "command": "git clean -Xf"
+        },
+        {
+          "title": "清除未追踪目录及文件",
+          "command": "git clean -df"
+        },
+        {
+          "title": "重置暂存区",
+          "command": "git reset"
+        },
+        {
+          "title": "重置工作区和暂存区",
+          "command": "git reset --hard",
+          "alternatives": [
+            "git reset && git checkout . && git clean -df"
+          ]
+        },
+        {
+          "title": "恢复本分支到某次提交，重置工作区与暂存区",
+          "command": "git reset --hard <commit-ish>"
+        },
+        {
+          "title": "恢复本分支到某次提交",
+          "command": "git reset --soft <commit-ish>"
+        },
+        {
+          "title": "恢复本分支到某次提交，重置暂存区",
+          "command": "git reset --mixed <commit-ish>"
+        },
+        {
+          "title": "反向恢复一个提交并生成新的提交",
+          "command": "git revert <commit>"
+        }
+      ]
+    },
+    {
+      "title": "stash",
+      "commands": [
+        {
+          "title": "储藏(stash)工作区相对暂存区更改的文件",
+          "command": "git stash"
+        },
+        {
+          "title": "储藏文件并添加描述信息",
+          "command": "git stash save <message>"
+        },
+        {
+          "title": "恢复最后一次储藏的文件",
+          "command": "git stash apply"
+        },
+        {
+          "title": "恢复最后一次储藏的文件并删除此次储存记录",
+          "command": "git stash pop"
+        },
+        {
+          "title": "查看储藏列表",
+          "command": "git stash list"
+        }
+      ]
+    },
+    {
+      "title": "status / files",
+      "commands": [
+        {
+          "title": "查看工作区的信息",
+          "command": "git status"
+        },
+        {
+          "title": "查看工作区信息并显示分支及追踪信息",
+          "command": "git status -sb"
+        },
+        {
+          "title": "并查看忽略文件的信息",
+          "command": "git status --ignored"
+        },
+        {
+          "title": "列出忽略文件",
+          "command": "git check-ignore *"
+        }
+      ]
+    },
+    {
+      "title": "remote / push / pull",
+      "commands": [
+        {
+          "title": "添加远程仓库并命名为 origin",
+          "command": "git remote add origin <git-repo>"
+        },
+        {
+          "title": "修改远程仓库的地址",
+          "command": "git remote set-url origin <git-repo>"
+        },
+        {
+          "title": "列出所有的远程仓库",
+          "command": "git remote -v"
+        },
+        {
+          "title": "列出远程仓库 origin 的详细信息",
+          "command": "git remote show origin"
+        },
+        {
+          "title": "git config push.default simple",
+          "command": "设置默认推送策略为 simple"
+        },
+        {
+          "title": "推送 master 到远程仓库",
+          "command": "git push origin master"
+        },
+        {
+          "title": "推送到远程仓库并建立追踪关系",
+          "command": "git push -u origin master"
+        },
+        {
+          "title": "推送时忽略 git hooks",
+          "command": "git push -n"
+        },
+        {
+          "title": "从远程仓库拉取文件",
+          "command": "git pull origin master"
+        },
+        {
+          "title": "设置 rebase 模式拉取代码",
+          "command": "git pull --rebase origin master"
+        }
+      ]
+    },
+    {
+      "title": "commit",
+      "commands": [
+        {
+          "title": "提交",
+          "command": "git commit -m <message>"
+        },
+        {
+          "title": "追加提交重置提交信息",
+          "command": "git commit --amend -m <message>"
+        },
+        {
+          "title": "追加提交重置作者",
+          "command": "git commit --amend --author=<mail> "
+        },
+        {
+          "title": "追加提交重置作者",
+          "command": "git commit --amend --author=<mail> "
+        },
+        {
+          "title": "变基进入交互式界面",
+          "command": "git rebase -i"
+        },
+        {
+          "title": "允许空提交",
+          "command": "git commit --allow-empty"
+        },
+        {
+          "title": "提交时跳过 web hook",
+          "command": "git commit -n"
+        }
+      ]
+    },
+    {
+      "title": "log",
+      "commands": [
+        {
+          "title": "显示提交日志",
+          "command": "git log"
+        },
+        {
+          "title": "显示某文件的提交日志",
+          "command": "git log -p <file>"
+        },
+        {
+          "title": "以图表形式显示提交日志",
+          "command": "git log --graph --all --oneline --decorate"
+        },
+        {
+          "title": "显示每次提交的对象信息",
+          "command": "git log --pretty=raw"
+        },
+        {
+          "title": "显示某个时间段的提交信息",
+          "command": "git log --since '2 days ago'"
+        },
+        {
+          "title": "显示指定作者的提交信息",
+          "command": "git log --author=<author>"
+        },
+        {
+          "title": "根据提交信息中的关键字查找",
+          "command": "git log --grep=<keyword>"
+        },
+        {
+          "title": "列出二者特有的提交",
+          "command": "git log master...develop"
+        },
+        {
+          "title": "列出 branch 有而 branch2 没有的提交",
+          "command": "git log branch2..branch",
+          "alternatives": [
+            "git log branch ^branch2",
+            "git log branch --not branch2"
+          ]
+        },
+        {
+          "title": "仅显示 merge commit",
+          "command": "git log --merges"
+        },
+        {
+          "title": "统计每个作者的提交情况",
+          "command": "git shortlog"
+        },
+        {
+          "title": "统计每个作者的提交个数",
+          "command": "git shortlog -sn"
+        }
+      ]
+    },
+    {
+      "title": "tag",
+      "commands": [
+        {
+          "title": "列出所有标签并显示标签信息",
+          "command": "git tag -ln"
+        },
+        {
+          "title": "添加一个标签",
+          "command": "git tag -a v1.0.0 -m <message>"
+        },
+        {
+          "title": "在某个 commit 上添加一个标签",
+          "command": "git tag v0.9.0 <commit>"
+        },
+        {
+          "title": "删除一个标签",
+          "command": "git tag -d v1.0.0"
+        },
+        {
+          "title": "查看某个标签信息",
+          "command": "git show v1.0.0"
+        },
+        {
+          "title": "推送所有标签到远程仓库",
+          "command": "git push --tags"
+        },
+        {
+          "title": "使用最近的标签描述本次提交",
+          "command": "git describe"
+        }
+      ]
+    },
+    {
+      "title": "files",
+      "commands": [
+        {
+          "title": "列出暂存区文件",
+          "command": "git ls-files"
+        },
+        {
+          "title": "列出忽略文件与未追踪文件",
+          "command": "git ls-files -o"
+        },
+        {
+          "title": "git ls-files --full-name",
+          "command": "子目录中显示所在位置"
+        }
+      ]
+    },
+    {
+      "title": "object",
+      "commands": [
+        {
+          "title": "获取改摘要信息的类型",
+          "command": "git cat-file -t <hash>"
+        },
+        {
+          "title": "获取改摘要信息的内容",
+          "command": "git cat-file -p <hash>"
+        }
+      ]
+    },
+    {
+      "title": "grep",
+      "commands": [
+        {
+          "title": "在已追踪文件中查找关键字并指明行号",
+          "command": "git grep -n hello"
+        }
+      ]
+    },
+    {
+      "title": "archive",
+      "commands": [
+        {
+          "title": "打包",
+          "command": "git archive -o arch.zip HEAD"
+        }
+      ]
+    }
+  ]
 }

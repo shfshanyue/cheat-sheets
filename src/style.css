@@ -55,6 +55,12 @@ h3 {
   color: $red;
 }
 
+.subject a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: $blue;
+}
+
 .container {
   columns: 3;
   column-gap: 10px;

@@ -5,7 +5,11 @@ html(lang="en")
     title= title
     link(rel='stylesheet', href='style.css')
   body
-    h1.subject= title
+    h1.subject
+      | #{title}
+      small
+        a(href=doc) doc
+        a(href=repo) git
     .container
       each collection in collections
         .block

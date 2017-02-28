@@ -1,5 +1,5 @@
 
-<h1 class="subject">Git Cheat Sheet</h1>
+<h1>Git Cheat Sheet</h1><a href="//shfshanyue.github.io/cheat-sheets/git">url</a>
 <h2>init</h2>
 <h3>初始化仓库</h3>
 ``` sh

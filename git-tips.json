@@ -1,5 +1,8 @@
 {
   "title": "Git Cheat Sheet",
+  "repo": "//github.com/shfshanyue/cheat-sheets",
+  "url": "//shfshanyue.github.io/cheat-sheets/git",
+  "doc": "//github.com/shfshanyue/cheat-sheets/blob/master/docs/git.md",
   "collections": [
     {
       "title": "init",

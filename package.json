@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "gulp dev",
     "build": "gulp",
-    "deploy": "gh-pages -d public"
+    "deploy": "gulp && gh-pages -d public"
   },
   "author": "",
   "license": "ISC",

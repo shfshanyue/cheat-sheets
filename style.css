@@ -49,6 +49,7 @@ h1, h2, h3 {
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
+
 }
 
 .block {

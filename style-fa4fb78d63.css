@@ -42,6 +42,12 @@ h1, h2, h3 {
   color: #dc322f;
 }
 
+.subject a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #268bd2;
+}
+
 .container {
   -webkit-columns: 3;
      -moz-columns: 3;

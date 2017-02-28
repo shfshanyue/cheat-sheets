@@ -42,7 +42,7 @@
           "command": "git config --global core.editor vim"
         },
         {
-          "title": "",
+          "title": "设置命令别名",
           "command": "git config --global alias.co checkout"
         }
       ]
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "title": "branch / merge / rebase",
+      "title": "branch",
       "commands": [
         {
           "title": "列出本地分支",
@@ -157,7 +157,12 @@
         {
           "title": "设置追踪分支",
           "command": "git branch -u <upstream>"
-        },
+        }
+      ]
+    },
+    {
+      "title": "merge",
+      "commands": [
         {
           "title": "合并 develop 分支到本分支",
           "command": "git merge develop"
@@ -173,7 +178,7 @@
       ]
     },
     {
-      "title": "checkout / clean / reset / revert",
+      "title": "checkout / clean",
       "commands": [
         {
           "title": "重置工作区某文件",
@@ -198,7 +203,12 @@
         {
           "title": "清除未追踪目录及文件",
           "command": "git clean -df"
-        },
+        }
+      ]
+    },
+    {
+      "title": "reset / revert",
+      "commands": [
         {
           "title": "重置暂存区",
           "command": "git reset"
@@ -292,7 +302,12 @@
         {
           "title": "列出远程仓库 origin 的详细信息",
           "command": "git remote show origin"
-        },
+        }
+      ]
+    },
+    {
+      "title": "push / pull",
+      "commands": [
         {
           "title": "git config push.default simple",
           "command": "设置默认推送策略为 simple"
@@ -306,7 +321,7 @@
           "command": "git push -u origin master"
         },
         {
-          "title": "推送时忽略 git hooks",
+          "title": "推送时忽略 pre-push hook",
           "command": "git push -n"
         },
         {
@@ -347,7 +362,7 @@
           "command": "git commit --allow-empty"
         },
         {
-          "title": "提交时跳过 web hook",
+          "title": "提交时跳过 pre-commit hook",
           "command": "git commit -n"
         }
       ]
@@ -454,8 +469,8 @@
           "command": "git ls-files -o"
         },
         {
-          "title": "git ls-files --full-name",
-          "command": "子目录中显示所在位置"
+          "title": "子目录中显示所在位置",
+          "command": "git ls-files --full-name"
         }
       ]
     },

@@ -48,9 +48,28 @@ h1, h2, h3 {
           columns: 3;
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
-          column-gap: 10px;
-
+          column-gap: 10px
 }
+
+@media (min-width: 768px) and (max-width: 991px){
+
+
+  .container {
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2
+  }
+  }
+
+@media (max-width: 767px) {
+
+
+  .container {
+    -webkit-columns: 1;
+       -moz-columns: 1;
+            columns: 1
+  }
+  }
 
 .block {
   display: inline-block;

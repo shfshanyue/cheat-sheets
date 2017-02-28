@@ -1,10 +1,14 @@
 const gulp = require('gulp')
+
 const postcss = require('gulp-postcss')
 const precss = require('precss')
 const autoprefixer = require('autoprefixer')
 const pug = require('gulp-pug')
+
 const rev = require('gulp-rev')
 const revReplace = require('gulp-rev-replace')
+
+const rename = require('gulp-rename')
 
 gulp.task('pug', ['style'], () => {
   return gulp.src('src/*.pug')
@@ -16,6 +20,18 @@ gulp.task('pug', ['style'], () => {
       manifest: gulp.src('./public/manifest.json')  
     }))
     .pipe(gulp.dest('public'))
+})
+
+gulp.task('markdown', () => {
+  return gulp.src('src/*.md')
+    .pipe(pug({
+      data: require('./git-tips.json'),
+      pretty: true
+    }))
+    .pipe(rename({
+      extname: '.md'  
+    }))
+    .pipe(gulp.dest('docs'))
 })
 
 gulp.task('style', () => {
@@ -30,8 +46,8 @@ gulp.task('style', () => {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('dev', ['pug'], () => {
-  gulp.watch('src/*', ['pug'])  
+gulp.task('dev', ['pug', 'markdown'], () => {
+  gulp.watch('src/*', ['pug, markdown'])  
 })
 
-gulp.task('default', ['pug'])
+gulp.task('default', ['pug', 'markdown'])

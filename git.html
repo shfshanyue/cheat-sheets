@@ -101,12 +101,6 @@
           <div class="title">建立分支不切换工作区</div><code class="code">git branch &lt;branch&gt;</code>
         </div>
         <div class="item">
-          <div class="title">建立分支并切换工作区</div><code class="code">git checkout -b &lt;branch&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">切换到最近一次分支</div><code class="code">git checkout -</code>
-        </div>
-        <div class="item">
           <div class="title">删除已被合并的分支</div><code class="code">git branch -d &lt;branch&gt;</code>
         </div>
         <div class="item">
@@ -117,6 +111,21 @@
         </div>
         <div class="item">
           <div class="title">设置追踪分支</div><code class="code">git branch -u &lt;upstream&gt;</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>checkout</h3>
+        <div class="item">
+          <div class="title">切换分支</div><code class="code">git checkout &lt;branch&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">建立分支并切换工作区</div><code class="code">git checkout -b &lt;branch&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">切换到最近一次分支</div><code class="code">git checkout -</code>
+        </div>
+        <div class="item">
+          <div class="title">建立无任何提交历史的分支</div><code class="code">git checkout --orphan &lt;branch&gt;</code>
         </div>
       </div>
       <div class="block">
@@ -207,7 +216,31 @@
         </div>
       </div>
       <div class="block">
-        <h3>remote / push / pull</h3>
+        <h3>commit</h3>
+        <div class="item">
+          <div class="title">提交</div><code class="code">git commit -m &lt;message&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">追加提交重置提交信息</div><code class="code">git commit --amend -m &lt;message&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">追加提交重置作者</div><code class="code">git commit --amend --author=&lt;mail&gt; </code>
+        </div>
+        <div class="item">
+          <div class="title">追加提交重置作者</div><code class="code">git commit --amend --author=&lt;mail&gt; </code>
+        </div>
+        <div class="item">
+          <div class="title">变基进入交互式界面</div><code class="code">git rebase -i</code>
+        </div>
+        <div class="item">
+          <div class="title">允许空提交</div><code class="code">git commit --allow-empty</code>
+        </div>
+        <div class="item">
+          <div class="title">提交时跳过 pre-commit hook</div><code class="code">git commit -n</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>remote</h3>
         <div class="item">
           <div class="title">添加远程仓库并命名为 origin</div><code class="code">git remote add origin &lt;git-repo&gt;</code>
         </div>
@@ -240,30 +273,6 @@
         </div>
         <div class="item">
           <div class="title">设置 rebase 模式拉取代码</div><code class="code">git pull --rebase origin master</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>commit</h3>
-        <div class="item">
-          <div class="title">提交</div><code class="code">git commit -m &lt;message&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">追加提交重置提交信息</div><code class="code">git commit --amend -m &lt;message&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">追加提交重置作者</div><code class="code">git commit --amend --author=&lt;mail&gt; </code>
-        </div>
-        <div class="item">
-          <div class="title">追加提交重置作者</div><code class="code">git commit --amend --author=&lt;mail&gt; </code>
-        </div>
-        <div class="item">
-          <div class="title">变基进入交互式界面</div><code class="code">git rebase -i</code>
-        </div>
-        <div class="item">
-          <div class="title">允许空提交</div><code class="code">git commit --allow-empty</code>
-        </div>
-        <div class="item">
-          <div class="title">提交时跳过 pre-commit hook</div><code class="code">git commit -n</code>
         </div>
       </div>
       <div class="block">
@@ -327,6 +336,25 @@
         </div>
         <div class="item">
           <div class="title">使用最近的标签描述本次提交</div><code class="code">git describe</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>blame</h3>
+        <div class="item">
+          <div class="title">找到最后一次提交的作者</div><code class="code">git blame &lt;file&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">找到具体某一段的最后一次提交</div><code class="code">git blame -L 10,18 &lt;file&gt;</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>bisect</h3>
+        <div class="item">
+          <div class="title">二分查找坏的提交</div><code class="code">git bisect start 
+ git checkout HEAD~20 
+ git bisect good 
+ git bisect bad 
+ git bisect reset</code>
         </div>
       </div>
       <div class="block">

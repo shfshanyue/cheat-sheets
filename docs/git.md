@@ -109,14 +109,6 @@ git branch -a
 ``` sh
 git branch &lt;branch&gt;
 ```
-<h4>建立分支并切换工作区</h4>
-``` sh
-git checkout -b &lt;branch&gt;
-```
-<h4>切换到最近一次分支</h4>
-``` sh
-git checkout -
-```
 <h4>删除已被合并的分支</h4>
 ``` sh
 git branch -d &lt;branch&gt;
@@ -133,6 +125,23 @@ git branch -m &lt;newbranch&gt;
 ``` sh
 git branch -u &lt;upstream&gt;
 ```
+<h2>checkout</h2>
+<h4>切换分支</h4>
+``` sh
+git checkout &lt;branch&gt;
+```
+<h4>建立分支并切换工作区</h4>
+``` sh
+git checkout -b &lt;branch&gt;
+```
+<h4>切换到最近一次分支</h4>
+``` sh
+git checkout -
+```
+<h4>建立无任何提交历史的分支</h4>
+``` sh
+git checkout --orphan &lt;branch&gt;
+```
 <h2>merge</h2>
 <h4>合并 develop 分支到本分支</h4>
 ``` sh
@@ -145,6 +154,10 @@ git merge -no-ff develop
 <h4>变基合并 develop 分支</h4>
 ``` sh
 git rebase develop
+```
+<h4>变基进入交互式界面</h4>
+``` sh
+git rebase -i
 ```
 <h2>checkout / clean</h2>
 <h4>重置工作区某文件</h4>
@@ -234,7 +247,28 @@ git status --ignored
 ``` sh
 git check-ignore *
 ```
-<h2>remote / push / pull</h2>
+<h2>commit</h2>
+<h4>提交</h4>
+``` sh
+git commit -m &lt;message&gt;
+```
+<h4>追加提交重置提交信息</h4>
+``` sh
+git commit --amend -m &lt;message&gt;
+```
+<h4>重置作者</h4>
+``` sh
+git commit --amend --author=&lt;mail&gt; 
+```
+<h4>允许空提交</h4>
+``` sh
+git commit --allow-empty
+```
+<h4>提交时跳过 pre-commit hook</h4>
+``` sh
+git commit -n
+```
+<h2>remote</h2>
 <h4>添加远程仓库并命名为 origin</h4>
 ``` sh
 git remote add origin &lt;git-repo&gt;
@@ -275,35 +309,6 @@ git pull origin master
 <h4>设置 rebase 模式拉取代码</h4>
 ``` sh
 git pull --rebase origin master
-```
-<h2>commit</h2>
-<h4>提交</h4>
-``` sh
-git commit -m &lt;message&gt;
-```
-<h4>追加提交重置提交信息</h4>
-``` sh
-git commit --amend -m &lt;message&gt;
-```
-<h4>追加提交重置作者</h4>
-``` sh
-git commit --amend --author=&lt;mail&gt; 
-```
-<h4>追加提交重置作者</h4>
-``` sh
-git commit --amend --author=&lt;mail&gt; 
-```
-<h4>变基进入交互式界面</h4>
-``` sh
-git rebase -i
-```
-<h4>允许空提交</h4>
-``` sh
-git commit --allow-empty
-```
-<h4>提交时跳过 pre-commit hook</h4>
-``` sh
-git commit -n
 ```
 <h2>log</h2>
 <h4>显示提交日志</h4>
@@ -382,6 +387,20 @@ git push --tags
 <h4>使用最近的标签描述本次提交</h4>
 ``` sh
 git describe
+```
+<h2>blame</h2>
+<h4>找到最后一次提交的作者</h4>
+``` sh
+git blame &lt;file&gt;
+```
+<h4>找到具体某一段的最后一次提交</h4>
+``` sh
+git blame -L 10,18 &lt;file&gt;
+```
+<h2>bisect</h2>
+<h4>二分查找坏的提交</h4>
+``` sh
+git bisect start &lt;br&gt; git checkout HEAD~20 &lt;br&gt; git bisect good &lt;br&gt; git bisect bad &lt;br&gt; git bisect reset
 ```
 <h2>files</h2>
 <h4>列出暂存区文件</h4>

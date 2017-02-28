@@ -13,4 +13,4 @@ html(lang="en")
           each item in collection.commands
             .item
               .title= item.title
-              code.code= item.command
+              code.code!= item.command

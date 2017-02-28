@@ -132,14 +132,6 @@
           "command": "git branch <branch>"
         },
         {
-          "title": "建立分支并切换工作区",
-          "command": "git checkout -b <branch>"
-        },
-        {
-          "title": "切换到最近一次分支",
-          "command": "git checkout -"
-        },
-        {
           "title": "删除已被合并的分支",
           "command": "git branch -d <branch>"
         },
@@ -161,6 +153,27 @@
       ]
     },
     {
+      "title": "checkout",
+      "commands": [
+        {
+          "title": "切换分支",
+          "command": "git checkout <branch>"
+        },
+        {
+          "title": "建立分支并切换工作区",
+          "command": "git checkout -b <branch>"
+        },
+        {
+          "title": "切换到最近一次分支",
+          "command": "git checkout -"
+        },
+        {
+          "title": "建立无任何提交历史的分支",
+          "command": "git checkout --orphan <branch>"
+        }
+      ]
+    },
+    {
       "title": "merge",
       "commands": [
         {
@@ -174,6 +187,10 @@
         {
           "title": "变基合并 develop 分支",
           "command": "git rebase develop"
+        },
+        {
+          "title": "变基进入交互式界面",
+          "command": "git rebase -i"
         }
       ]
     },
@@ -285,7 +302,32 @@
       ]
     },
     {
-      "title": "remote / push / pull",
+      "title": "commit",
+      "commands": [
+        {
+          "title": "提交",
+          "command": "git commit -m <message>"
+        },
+        {
+          "title": "追加提交重置提交信息",
+          "command": "git commit --amend -m <message>"
+        },
+        {
+          "title": "重置作者",
+          "command": "git commit --amend --author=<mail> "
+        },
+        {
+          "title": "允许空提交",
+          "command": "git commit --allow-empty"
+        },
+        {
+          "title": "提交时跳过 pre-commit hook",
+          "command": "git commit -n"
+        }
+      ]
+    },
+    {
+      "title": "remote",
       "commands": [
         {
           "title": "添加远程仓库并命名为 origin",
@@ -331,39 +373,6 @@
         {
           "title": "设置 rebase 模式拉取代码",
           "command": "git pull --rebase origin master"
-        }
-      ]
-    },
-    {
-      "title": "commit",
-      "commands": [
-        {
-          "title": "提交",
-          "command": "git commit -m <message>"
-        },
-        {
-          "title": "追加提交重置提交信息",
-          "command": "git commit --amend -m <message>"
-        },
-        {
-          "title": "追加提交重置作者",
-          "command": "git commit --amend --author=<mail> "
-        },
-        {
-          "title": "追加提交重置作者",
-          "command": "git commit --amend --author=<mail> "
-        },
-        {
-          "title": "变基进入交互式界面",
-          "command": "git rebase -i"
-        },
-        {
-          "title": "允许空提交",
-          "command": "git commit --allow-empty"
-        },
-        {
-          "title": "提交时跳过 pre-commit hook",
-          "command": "git commit -n"
         }
       ]
     },
@@ -454,6 +463,28 @@
         {
           "title": "使用最近的标签描述本次提交",
           "command": "git describe"
+        }
+      ]
+    },
+    {
+      "title": "blame",
+      "commands": [
+        {
+          "title": "找到最后一次提交的作者",
+          "command": "git blame <file>"
+        },
+        {
+          "title": "找到具体某一段的最后一次提交",
+          "command": "git blame -L 10,18 <file>"
+        }
+      ]
+    },
+    {
+      "title": "bisect",
+      "commands": [
+        {
+          "title": "二分查找坏的提交",
+          "command": "git bisect start <br> git checkout HEAD~20 <br> git bisect good <br> git bisect bad <br> git bisect reset"
         }
       ]
     },

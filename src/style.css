@@ -58,6 +58,14 @@ h3 {
 .container {
   columns: 3;
   column-gap: 10px;
+
+  @media (min-width: 768px) and (max-width: 991px){
+    columns: 2;
+  }
+
+  @media (max-width: 767px) {
+    columns: 1;
+  }
 }
 
 .block {

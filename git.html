@@ -10,13 +10,19 @@
     <h1 class="subject">Git Cheat Sheet<small><a href="//github.com/shfshanyue/cheat-sheets/blob/master/docs/git.md">Markdown</a><a href="//github.com/shfshanyue/cheat-sheets">Github</a></small></h1>
     <div class="container">
       <div class="block">
-        <h3>init</h3>
+        <h3>初始化仓库</h3>
         <div class="item">
           <div class="title">初始化仓库</div><code class="code">git init</code>
         </div>
+        <div class="item">
+          <div class="title">初始化裸仓库</div><code class="code">git init --bare</code>
+        </div>
+        <div class="item">
+          <div class="title">克隆仓库</div><code class="code">git clone &lt;git-repo&gt;</code>
+        </div>
       </div>
       <div class="block">
-        <h3>config</h3>
+        <h3>配置</h3>
         <div class="item">
           <div class="title">编辑配置文件</div><code class="code">git config [--global] -e</code>
         </div>
@@ -43,7 +49,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>add / rm / mv</h3>
+        <h3>操作暂存区文件</h3>
         <div class="item">
           <div class="title">添加所有文件到暂存区，包括未追踪文件</div><code class="code">git add -A</code>
         </div>
@@ -64,7 +70,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>diff</h3>
+        <h3>显示更改</h3>
         <div class="item">
           <div class="title">显示工作区与暂存区的不同</div><code class="code">git diff</code>
         </div>
@@ -85,7 +91,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>branch</h3>
+        <h3>分支</h3>
         <div class="item">
           <div class="title">列出本地分支</div><code class="code">git branch</code>
         </div>
@@ -115,7 +121,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>checkout</h3>
+        <h3>切换分支</h3>
         <div class="item">
           <div class="title">切换分支</div><code class="code">git checkout &lt;branch&gt;</code>
         </div>
@@ -130,7 +136,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>merge</h3>
+        <h3>合并分支</h3>
         <div class="item">
           <div class="title">合并 develop 分支到本分支</div><code class="code">git merge develop</code>
         </div>
@@ -145,7 +151,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>checkout / clean</h3>
+        <h3>重置工作区</h3>
         <div class="item">
           <div class="title">重置工作区某文件</div><code class="code">git checkout -- &lt;file&gt;</code>
         </div>
@@ -166,7 +172,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>reset / revert</h3>
+        <h3>重置暂存区与仓库</h3>
         <div class="item">
           <div class="title">重置暂存区</div><code class="code">git reset</code>
         </div>
@@ -187,7 +193,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>stash</h3>
+        <h3>储藏与恢复</h3>
         <div class="item">
           <div class="title">储藏(stash)工作区相对暂存区更改的文件</div><code class="code">git stash</code>
         </div>
@@ -205,7 +211,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>status / files</h3>
+        <h3>工作区状态</h3>
         <div class="item">
           <div class="title">查看工作区的信息</div><code class="code">git status</code>
         </div>
@@ -220,25 +226,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>commit</h3>
-        <div class="item">
-          <div class="title">提交</div><code class="code">git commit -m &lt;message&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">追加提交重置提交信息</div><code class="code">git commit --amend -m &lt;message&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">重置作者</div><code class="code">git commit --amend --author=&lt;mail&gt; </code>
-        </div>
-        <div class="item">
-          <div class="title">允许空提交</div><code class="code">git commit --allow-empty</code>
-        </div>
-        <div class="item">
-          <div class="title">提交时跳过 pre-commit hook</div><code class="code">git commit -n</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>remote</h3>
+        <h3>远程仓库</h3>
         <div class="item">
           <div class="title">添加远程仓库并命名为 origin</div><code class="code">git remote add origin &lt;git-repo&gt;</code>
         </div>
@@ -253,7 +241,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>push / pull</h3>
+        <h3>推送与拉取</h3>
         <div class="item">
           <div class="title">git config push.default simple</div><code class="code">设置默认推送策略为 simple</code>
         </div>
@@ -274,7 +262,25 @@
         </div>
       </div>
       <div class="block">
-        <h3>log</h3>
+        <h3>提交</h3>
+        <div class="item">
+          <div class="title">提交</div><code class="code">git commit -m &lt;message&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">追加提交重置提交信息</div><code class="code">git commit --amend -m &lt;message&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">重置作者</div><code class="code">git commit --amend --author=&lt;mail&gt; </code>
+        </div>
+        <div class="item">
+          <div class="title">允许空提交</div><code class="code">git commit --allow-empty</code>
+        </div>
+        <div class="item">
+          <div class="title">提交时跳过 pre-commit hook</div><code class="code">git commit -n</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>日志</h3>
         <div class="item">
           <div class="title">显示提交日志</div><code class="code">git log</code>
         </div>
@@ -313,7 +319,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>tag</h3>
+        <h3>标签</h3>
         <div class="item">
           <div class="title">列出所有标签并显示标签信息</div><code class="code">git tag -ln</code>
         </div>
@@ -337,22 +343,25 @@
         </div>
       </div>
       <div class="block">
-        <h3>blame</h3>
+        <h3>追责（甩锅）</h3>
         <div class="item">
           <div class="title">找到最后一次提交的作者</div><code class="code">git blame &lt;file&gt;</code>
         </div>
         <div class="item">
           <div class="title">找到具体某一段的最后一次提交</div><code class="code">git blame -L 10,18 &lt;file&gt;</code>
         </div>
+        <div class="item">
+          <div class="title">查找文件的修改历史及明细</div><code class="code">git log -p &lt;file&gt;</code>
+        </div>
       </div>
       <div class="block">
-        <h3>bisect</h3>
+        <h3>确认坏的提交</h3>
         <div class="item">
           <div class="title">二分查找坏的提交</div><code class="code">git bisect start &lt;br&gt; git checkout HEAD~20 &lt;br&gt; git bisect good &lt;br&gt; git bisect bad &lt;br&gt; git bisect reset</code>
         </div>
       </div>
       <div class="block">
-        <h3>files</h3>
+        <h3>暂存区文件</h3>
         <div class="item">
           <div class="title">列出暂存区文件</div><code class="code">git ls-files</code>
         </div>
@@ -364,7 +373,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>object</h3>
+        <h3>git 对象</h3>
         <div class="item">
           <div class="title">获取改摘要信息的类型</div><code class="code">git cat-file -t &lt;hash&gt;</code>
         </div>
@@ -373,13 +382,13 @@
         </div>
       </div>
       <div class="block">
-        <h3>grep</h3>
+        <h3>查找</h3>
         <div class="item">
           <div class="title">在已追踪文件中查找关键字并指明行号</div><code class="code">git grep -n hello</code>
         </div>
       </div>
       <div class="block">
-        <h3>archive</h3>
+        <h3>打包</h3>
         <div class="item">
           <div class="title">打包</div><code class="code">git archive -o arch.zip HEAD</code>
         </div>

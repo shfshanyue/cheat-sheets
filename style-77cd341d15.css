@@ -31,21 +31,55 @@ body {
   padding: 25px 36px;
   font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: #fdf6e3;
-  color: #657b83;
+  color: #657b83
 }
+
+@media (max-width: 767px) {
+
+
+  body {
+    padding: 25px 10px
+  }
+  }
 
 h1, h2, h3 {
   padding: 6px 0;
 }
 
-.subject {
-  color: #dc322f;
+h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #dc322f
 }
 
-.subject a {
-  margin-left: 15px;
+@media (max-width: 767px) {
+
+
+  h1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start
+  }
+  }
+
+h1 a {
   text-decoration: none;
-  color: #268bd2;
+  color: #268bd2
+}
+
+h1 a + a {
+  margin-left: 15px
 }
 
 .container {

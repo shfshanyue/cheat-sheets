@@ -2,6 +2,8 @@
 <h1>Git Cheat Sheet</h1><a href="//shfshanyue.github.io/cheat-sheets/git">查看卡片式效果</a><br/>
 <ul>
   <li><a href="#0-0">初始化仓库</a></li>
+  <li><a href="#0-1">初始化裸仓库</a></li>
+  <li><a href="#0-2">克隆仓库</a></li>
   <li><a href="#1-0">编辑配置文件</a></li>
   <li><a href="#1-1">列出配置信息</a></li>
   <li><a href="#1-2">获取相应的配置</a></li>
@@ -60,21 +62,21 @@
   <li><a href="#10-1">查看工作区信息并显示分支及追踪信息</a></li>
   <li><a href="#10-2">并查看忽略文件的信息</a></li>
   <li><a href="#10-3">列出忽略文件</a></li>
-  <li><a href="#11-0">提交</a></li>
-  <li><a href="#11-1">追加提交重置提交信息</a></li>
-  <li><a href="#11-2">重置作者</a></li>
-  <li><a href="#11-3">允许空提交</a></li>
-  <li><a href="#11-4">提交时跳过 pre-commit hook</a></li>
-  <li><a href="#12-0">添加远程仓库并命名为 origin</a></li>
-  <li><a href="#12-1">修改远程仓库的地址</a></li>
-  <li><a href="#12-2">列出所有的远程仓库</a></li>
-  <li><a href="#12-3">列出远程仓库 origin 的详细信息</a></li>
-  <li><a href="#13-0">git config push.default simple</a></li>
-  <li><a href="#13-1">推送 master 到远程仓库</a></li>
-  <li><a href="#13-2">推送到远程仓库并建立追踪关系</a></li>
-  <li><a href="#13-3">推送时忽略 pre-push hook</a></li>
-  <li><a href="#13-4">从远程仓库拉取文件</a></li>
-  <li><a href="#13-5">设置 rebase 模式拉取代码</a></li>
+  <li><a href="#11-0">添加远程仓库并命名为 origin</a></li>
+  <li><a href="#11-1">修改远程仓库的地址</a></li>
+  <li><a href="#11-2">列出所有的远程仓库</a></li>
+  <li><a href="#11-3">列出远程仓库 origin 的详细信息</a></li>
+  <li><a href="#12-0">git config push.default simple</a></li>
+  <li><a href="#12-1">推送 master 到远程仓库</a></li>
+  <li><a href="#12-2">推送到远程仓库并建立追踪关系</a></li>
+  <li><a href="#12-3">推送时忽略 pre-push hook</a></li>
+  <li><a href="#12-4">从远程仓库拉取文件</a></li>
+  <li><a href="#12-5">设置 rebase 模式拉取代码</a></li>
+  <li><a href="#13-0">提交</a></li>
+  <li><a href="#13-1">追加提交重置提交信息</a></li>
+  <li><a href="#13-2">重置作者</a></li>
+  <li><a href="#13-3">允许空提交</a></li>
+  <li><a href="#13-4">提交时跳过 pre-commit hook</a></li>
   <li><a href="#14-0">显示提交日志</a></li>
   <li><a href="#14-1">显示某文件的提交日志</a></li>
   <li><a href="#14-2">以图表形式显示提交日志</a></li>
@@ -96,6 +98,7 @@
   <li><a href="#15-6">使用最近的标签描述本次提交</a></li>
   <li><a href="#16-0">找到最后一次提交的作者</a></li>
   <li><a href="#16-1">找到具体某一段的最后一次提交</a></li>
+  <li><a href="#16-2">查找文件的修改历史及明细</a></li>
   <li><a href="#17-0">二分查找坏的提交</a></li>
   <li><a href="#18-0">列出暂存区文件</a></li>
   <li><a href="#18-1">列出忽略文件与未追踪文件</a></li>
@@ -105,13 +108,23 @@
   <li><a href="#20-0">在已追踪文件中查找关键字并指明行号</a></li>
   <li><a href="#21-0">打包</a></li>
 </ul>
-<h2>init</h2>
+<h2>初始化仓库</h2>
 <div id="0-0"></div>
 <h3>初始化仓库</h3>
 ``` sh
 git init
 ```
-<h2>config</h2>
+<div id="0-1"></div>
+<h3>初始化裸仓库</h3>
+``` sh
+git init --bare
+```
+<div id="0-2"></div>
+<h3>克隆仓库</h3>
+``` sh
+git clone <git-repo>
+```
+<h2>配置</h2>
 <div id="1-0"></div>
 <h3>编辑配置文件</h3>
 ``` sh
@@ -152,7 +165,7 @@ git config --global core.editor vim
 ``` sh
 git config --global alias.co checkout
 ```
-<h2>add / rm / mv</h2>
+<h2>操作暂存区文件</h2>
 <div id="2-0"></div>
 <h3>添加所有文件到暂存区，包括未追踪文件</h3>
 ``` sh
@@ -183,7 +196,7 @@ git rm --cached <file>
 ``` sh
 git mv <file> <file1>
 ```
-<h2>diff</h2>
+<h2>显示更改</h2>
 <div id="3-0"></div>
 <h3>显示工作区与暂存区的不同</h3>
 ``` sh
@@ -214,7 +227,7 @@ git diff <commit> <commit>
 ``` sh
 git show <commit>
 ```
-<h2>branch</h2>
+<h2>分支</h2>
 <div id="4-0"></div>
 <h3>列出本地分支</h3>
 ``` sh
@@ -260,7 +273,7 @@ git branch -m <newbranch>
 ``` sh
 git branch -u <upstream>
 ```
-<h2>checkout</h2>
+<h2>切换分支</h2>
 <div id="5-0"></div>
 <h3>切换分支</h3>
 ``` sh
@@ -281,7 +294,7 @@ git checkout -
 ``` sh
 git checkout --orphan <branch>
 ```
-<h2>merge</h2>
+<h2>合并分支</h2>
 <div id="6-0"></div>
 <h3>合并 develop 分支到本分支</h3>
 ``` sh
@@ -302,7 +315,7 @@ git rebase develop
 ``` sh
 git rebase -i
 ```
-<h2>checkout / clean</h2>
+<h2>重置工作区</h2>
 <div id="7-0"></div>
 <h3>重置工作区某文件</h3>
 ``` sh
@@ -333,7 +346,7 @@ git clean -Xf
 ``` sh
 git clean -df
 ```
-<h2>reset / revert</h2>
+<h2>重置暂存区与仓库</h2>
 <div id="8-0"></div>
 <h3>重置暂存区</h3>
 ``` sh
@@ -364,7 +377,7 @@ git reset --mixed <commit-ish>
 ``` sh
 git revert <commit>
 ```
-<h2>stash</h2>
+<h2>储藏与恢复</h2>
 <div id="9-0"></div>
 <h3>储藏(stash)工作区相对暂存区更改的文件</h3>
 ``` sh
@@ -390,7 +403,7 @@ git stash pop
 ``` sh
 git stash list
 ```
-<h2>status / files</h2>
+<h2>工作区状态</h2>
 <div id="10-0"></div>
 <h3>查看工作区的信息</h3>
 ``` sh
@@ -411,85 +424,85 @@ git status --ignored
 ``` sh
 git check-ignore *
 ```
-<h2>commit</h2>
+<h2>远程仓库</h2>
 <div id="11-0"></div>
-<h3>提交</h3>
-``` sh
-git commit -m <message>
-```
-<div id="11-1"></div>
-<h3>追加提交重置提交信息</h3>
-``` sh
-git commit --amend -m <message>
-```
-<div id="11-2"></div>
-<h3>重置作者</h3>
-``` sh
-git commit --amend --author=<mail> 
-```
-<div id="11-3"></div>
-<h3>允许空提交</h3>
-``` sh
-git commit --allow-empty
-```
-<div id="11-4"></div>
-<h3>提交时跳过 pre-commit hook</h3>
-``` sh
-git commit -n
-```
-<h2>remote</h2>
-<div id="12-0"></div>
 <h3>添加远程仓库并命名为 origin</h3>
 ``` sh
 git remote add origin <git-repo>
 ```
-<div id="12-1"></div>
+<div id="11-1"></div>
 <h3>修改远程仓库的地址</h3>
 ``` sh
 git remote set-url origin <git-repo>
 ```
-<div id="12-2"></div>
+<div id="11-2"></div>
 <h3>列出所有的远程仓库</h3>
 ``` sh
 git remote -v
 ```
-<div id="12-3"></div>
+<div id="11-3"></div>
 <h3>列出远程仓库 origin 的详细信息</h3>
 ``` sh
 git remote show origin
 ```
-<h2>push / pull</h2>
-<div id="13-0"></div>
+<h2>推送与拉取</h2>
+<div id="12-0"></div>
 <h3>git config push.default simple</h3>
 ``` sh
 设置默认推送策略为 simple
 ```
-<div id="13-1"></div>
+<div id="12-1"></div>
 <h3>推送 master 到远程仓库</h3>
 ``` sh
 git push origin master
 ```
-<div id="13-2"></div>
+<div id="12-2"></div>
 <h3>推送到远程仓库并建立追踪关系</h3>
 ``` sh
 git push -u origin master
 ```
-<div id="13-3"></div>
+<div id="12-3"></div>
 <h3>推送时忽略 pre-push hook</h3>
 ``` sh
 git push -n
 ```
-<div id="13-4"></div>
+<div id="12-4"></div>
 <h3>从远程仓库拉取文件</h3>
 ``` sh
 git pull origin master
 ```
-<div id="13-5"></div>
+<div id="12-5"></div>
 <h3>设置 rebase 模式拉取代码</h3>
 ``` sh
 git pull --rebase origin master
 ```
-<h2>log</h2>
+<h2>提交</h2>
+<div id="13-0"></div>
+<h3>提交</h3>
+``` sh
+git commit -m <message>
+```
+<div id="13-1"></div>
+<h3>追加提交重置提交信息</h3>
+``` sh
+git commit --amend -m <message>
+```
+<div id="13-2"></div>
+<h3>重置作者</h3>
+``` sh
+git commit --amend --author=<mail> 
+```
+<div id="13-3"></div>
+<h3>允许空提交</h3>
+``` sh
+git commit --allow-empty
+```
+<div id="13-4"></div>
+<h3>提交时跳过 pre-commit hook</h3>
+``` sh
+git commit -n
+```
+<h2>日志</h2>
 <div id="14-0"></div>
 <h3>显示提交日志</h3>
 ``` sh
@@ -550,7 +563,7 @@ git shortlog
 ``` sh
 git shortlog -sn
 ```
-<h2>tag</h2>
+<h2>标签</h2>
 <div id="15-0"></div>
 <h3>列出所有标签并显示标签信息</h3>
 ``` sh
@@ -586,7 +599,7 @@ git push --tags
 ``` sh
 git describe
 ```
-<h2>blame</h2>
+<h2>追责（甩锅）</h2>
 <div id="16-0"></div>
 <h3>找到最后一次提交的作者</h3>
 ``` sh
@@ -597,13 +610,18 @@ git blame <file>
 ``` sh
 git blame -L 10,18 <file>
 ```
-<h2>bisect</h2>
+<div id="16-2"></div>
+<h3>查找文件的修改历史及明细</h3>
+``` sh
+git log -p <file>
+```
+<h2>确认坏的提交</h2>
 <div id="17-0"></div>
 <h3>二分查找坏的提交</h3>
 ``` sh
 git bisect start <br> git checkout HEAD~20 <br> git bisect good <br> git bisect bad <br> git bisect reset
 ```
-<h2>files</h2>
+<h2>暂存区文件</h2>
 <div id="18-0"></div>
 <h3>列出暂存区文件</h3>
 ``` sh
@@ -619,7 +637,7 @@ git ls-files -o
 ``` sh
 git ls-files --full-name
 ```
-<h2>object</h2>
+<h2>git 对象</h2>
 <div id="19-0"></div>
 <h3>获取改摘要信息的类型</h3>
 ``` sh
@@ -630,13 +648,13 @@ git cat-file -t <hash>
 ``` sh
 git cat-file -p <hash>
 ```
-<h2>grep</h2>
+<h2>查找</h2>
 <div id="20-0"></div>
 <h3>在已追踪文件中查找关键字并指明行号</h3>
 ``` sh
 git grep -n hello
 ```
-<h2>archive</h2>
+<h2>打包</h2>
 <div id="21-0"></div>
 <h3>打包</h3>
 ``` sh

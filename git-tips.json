@@ -5,16 +5,24 @@
   "doc": "//github.com/shfshanyue/cheat-sheets/blob/master/docs/git.md",
   "collections": [
     {
-      "title": "init",
+      "title": "初始化仓库",
       "commands": [
         {
           "title": "初始化仓库",
           "command": "git init"
+        },
+        {
+          "title": "初始化裸仓库",
+          "command": "git init --bare"
+        },
+        {
+          "title": "克隆仓库",
+          "command": "git clone <git-repo>"
         }
       ]
     },
     {
-      "title": "config",
+      "title": "配置",
       "commands": [
         {
           "title": "编辑配置文件",
@@ -51,7 +59,7 @@
       ]
     },
     {
-      "title": "add / rm / mv",
+      "title": "操作暂存区文件",
       "commands": [
         {
           "title": "添加所有文件到暂存区，包括未追踪文件",
@@ -80,7 +88,7 @@
       ]
     },
     {
-      "title": "diff",
+      "title": "显示更改",
       "commands": [
         {
           "title": "显示工作区与暂存区的不同",
@@ -109,7 +117,7 @@
       ]
     },
     {
-      "title": "branch",
+      "title": "分支",
       "commands": [
         {
           "title": "列出本地分支",
@@ -156,7 +164,7 @@
       ]
     },
     {
-      "title": "checkout",
+      "title": "切换分支",
       "commands": [
         {
           "title": "切换分支",
@@ -177,7 +185,7 @@
       ]
     },
     {
-      "title": "merge",
+      "title": "合并分支",
       "commands": [
         {
           "title": "合并 develop 分支到本分支",
@@ -198,7 +206,7 @@
       ]
     },
     {
-      "title": "checkout / clean",
+      "title": "重置工作区",
       "commands": [
         {
           "title": "重置工作区某文件",
@@ -227,7 +235,7 @@
       ]
     },
     {
-      "title": "reset / revert",
+      "title": "重置暂存区与仓库",
       "commands": [
         {
           "title": "重置暂存区",
@@ -259,7 +267,7 @@
       ]
     },
     {
-      "title": "stash",
+      "title": "储藏与恢复",
       "commands": [
         {
           "title": "储藏(stash)工作区相对暂存区更改的文件",
@@ -284,7 +292,7 @@
       ]
     },
     {
-      "title": "status / files",
+      "title": "工作区状态",
       "commands": [
         {
           "title": "查看工作区的信息",
@@ -305,32 +313,7 @@
       ]
     },
     {
-      "title": "commit",
-      "commands": [
-        {
-          "title": "提交",
-          "command": "git commit -m <message>"
-        },
-        {
-          "title": "追加提交重置提交信息",
-          "command": "git commit --amend -m <message>"
-        },
-        {
-          "title": "重置作者",
-          "command": "git commit --amend --author=<mail> "
-        },
-        {
-          "title": "允许空提交",
-          "command": "git commit --allow-empty"
-        },
-        {
-          "title": "提交时跳过 pre-commit hook",
-          "command": "git commit -n"
-        }
-      ]
-    },
-    {
-      "title": "remote",
+      "title": "远程仓库",
       "commands": [
         {
           "title": "添加远程仓库并命名为 origin",
@@ -351,7 +334,7 @@
       ]
     },
     {
-      "title": "push / pull",
+      "title": "推送与拉取",
       "commands": [
         {
           "title": "git config push.default simple",
@@ -380,7 +363,32 @@
       ]
     },
     {
-      "title": "log",
+      "title": "提交",
+      "commands": [
+        {
+          "title": "提交",
+          "command": "git commit -m <message>"
+        },
+        {
+          "title": "追加提交重置提交信息",
+          "command": "git commit --amend -m <message>"
+        },
+        {
+          "title": "重置作者",
+          "command": "git commit --amend --author=<mail> "
+        },
+        {
+          "title": "允许空提交",
+          "command": "git commit --allow-empty"
+        },
+        {
+          "title": "提交时跳过 pre-commit hook",
+          "command": "git commit -n"
+        }
+      ]
+    },
+    {
+      "title": "日志",
       "commands": [
         {
           "title": "显示提交日志",
@@ -437,7 +445,7 @@
       ]
     },
     {
-      "title": "tag",
+      "title": "标签",
       "commands": [
         {
           "title": "列出所有标签并显示标签信息",
@@ -470,7 +478,7 @@
       ]
     },
     {
-      "title": "blame",
+      "title": "追责（甩锅）",
       "commands": [
         {
           "title": "找到最后一次提交的作者",
@@ -479,11 +487,15 @@
         {
           "title": "找到具体某一段的最后一次提交",
           "command": "git blame -L 10,18 <file>"
+        },
+        {
+          "title": "查找文件的修改历史及明细",
+          "command": "git log -p <file>"
         }
       ]
     },
     {
-      "title": "bisect",
+      "title": "确认坏的提交",
       "commands": [
         {
           "title": "二分查找坏的提交",
@@ -492,7 +504,7 @@
       ]
     },
     {
-      "title": "files",
+      "title": "暂存区文件",
       "commands": [
         {
           "title": "列出暂存区文件",
@@ -509,7 +521,7 @@
       ]
     },
     {
-      "title": "object",
+      "title": "git 对象",
       "commands": [
         {
           "title": "获取改摘要信息的类型",
@@ -522,7 +534,7 @@
       ]
     },
     {
-      "title": "grep",
+      "title": "查找",
       "commands": [
         {
           "title": "在已追踪文件中查找关键字并指明行号",
@@ -531,7 +543,7 @@
       ]
     },
     {
-      "title": "archive",
+      "title": "打包",
       "commands": [
         {
           "title": "打包",

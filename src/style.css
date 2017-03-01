@@ -43,6 +43,10 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: $base3;
   color: $base00;
+
+  @media (max-width: 767px) {
+    padding: 25px 10px;
+  }
 }
 
 h1,
@@ -51,14 +55,25 @@ h3 {
   padding: 6px 0;
 }
 
-.subject {
+h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   color: $red;
+  
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-.subject a {
-  margin-left: 15px;
+h1 a {
   text-decoration: none;
   color: $blue;
+
+  & + a {
+    margin-left: 15px;
+  }
 }
 
 .container {

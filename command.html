@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="block">
-        <h3>添加删除移动文件</h3>
+        <h3>操作暂存区文件</h3>
         <div class="item">
           <div class="title">添加所有文件到暂存区，包括未追踪文件</div><code class="code">git add -A</code>
         </div>
@@ -67,21 +67,6 @@
         </div>
         <div class="item">
           <div class="title">重命名暂存区文件</div><code class="code">git mv &lt;file&gt; &lt;file1&gt;</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>工作区状态</h3>
-        <div class="item">
-          <div class="title">查看工作区的信息</div><code class="code">git status</code>
-        </div>
-        <div class="item">
-          <div class="title">查看工作区信息并显示分支及追踪信息</div><code class="code">git status -sb</code>
-        </div>
-        <div class="item">
-          <div class="title">并查看忽略文件的信息</div><code class="code">git status --ignored</code>
-        </div>
-        <div class="item">
-          <div class="title">列出忽略文件</div><code class="code">git check-ignore *</code>
         </div>
       </div>
       <div class="block">
@@ -103,78 +88,6 @@
         </div>
         <div class="item">
           <div class="title">显示某次 commit 所做的更改</div><code class="code">git show &lt;commit&gt;</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>列出文件信息</h3>
-        <div class="item">
-          <div class="title">列出暂存区文件</div><code class="code">git ls-files</code>
-        </div>
-        <div class="item">
-          <div class="title">列出忽略文件与未追踪文件</div><code class="code">git ls-files -o</code>
-        </div>
-        <div class="item">
-          <div class="title">子目录中显示所在位置</div><code class="code">git ls-files --full-name</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>储藏与恢复</h3>
-        <div class="item">
-          <div class="title">储藏(stash)工作区相对暂存区更改的文件</div><code class="code">git stash</code>
-        </div>
-        <div class="item">
-          <div class="title">储藏文件并添加描述信息</div><code class="code">git stash save &lt;message&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复最后一次储藏的文件</div><code class="code">git stash apply</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复最后一次储藏的文件并删除此次储存记录</div><code class="code">git stash pop</code>
-        </div>
-        <div class="item">
-          <div class="title">查看储藏列表</div><code class="code">git stash list</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>恢复工作区</h3>
-        <div class="item">
-          <div class="title">重置工作区某文件</div><code class="code">git checkout -- &lt;file&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">重置工作区</div><code class="code">git checkout .</code>
-        </div>
-        <div class="item">
-          <div class="title">列出将要清除的未追踪文件</div><code class="code">git clean -n</code>
-        </div>
-        <div class="item">
-          <div class="title">清除未追踪文件</div><code class="code">git clean -f</code>
-        </div>
-        <div class="item">
-          <div class="title">清除忽略文件</div><code class="code">git clean -Xf</code>
-        </div>
-        <div class="item">
-          <div class="title">清除未追踪目录及文件</div><code class="code">git clean -df</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>回退版本</h3>
-        <div class="item">
-          <div class="title">重置暂存区</div><code class="code">git reset</code>
-        </div>
-        <div class="item">
-          <div class="title">重置工作区和暂存区</div><code class="code">git reset --hard</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复本分支到某次提交，重置工作区与暂存区</div><code class="code">git reset --hard &lt;commit-ish&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复本分支到某次提交</div><code class="code">git reset --soft &lt;commit-ish&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复本分支到某次提交，重置暂存区</div><code class="code">git reset --mixed &lt;commit-ish&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">反向恢复一个提交并生成新的提交</div><code class="code">git revert &lt;commit&gt;</code>
         </div>
       </div>
       <div class="block">
@@ -235,6 +148,81 @@
         </div>
         <div class="item">
           <div class="title">变基进入交互式界面</div><code class="code">git rebase -i</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>重置工作区</h3>
+        <div class="item">
+          <div class="title">重置工作区某文件</div><code class="code">git checkout -- &lt;file&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">重置工作区</div><code class="code">git checkout .</code>
+        </div>
+        <div class="item">
+          <div class="title">列出将要清除的未追踪文件</div><code class="code">git clean -n</code>
+        </div>
+        <div class="item">
+          <div class="title">清除未追踪文件</div><code class="code">git clean -f</code>
+        </div>
+        <div class="item">
+          <div class="title">清除忽略文件</div><code class="code">git clean -Xf</code>
+        </div>
+        <div class="item">
+          <div class="title">清除未追踪目录及文件</div><code class="code">git clean -df</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>重置暂存区与仓库</h3>
+        <div class="item">
+          <div class="title">重置暂存区</div><code class="code">git reset</code>
+        </div>
+        <div class="item">
+          <div class="title">重置工作区和暂存区</div><code class="code">git reset --hard</code>
+        </div>
+        <div class="item">
+          <div class="title">恢复本分支到某次提交，重置工作区与暂存区</div><code class="code">git reset --hard &lt;commit-ish&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">恢复本分支到某次提交</div><code class="code">git reset --soft &lt;commit-ish&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">恢复本分支到某次提交，重置暂存区</div><code class="code">git reset --mixed &lt;commit-ish&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">反向恢复一个提交并生成新的提交</div><code class="code">git revert &lt;commit&gt;</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>储藏与恢复</h3>
+        <div class="item">
+          <div class="title">储藏(stash)工作区相对暂存区更改的文件</div><code class="code">git stash</code>
+        </div>
+        <div class="item">
+          <div class="title">储藏文件并添加描述信息</div><code class="code">git stash save &lt;message&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">恢复最后一次储藏的文件</div><code class="code">git stash apply</code>
+        </div>
+        <div class="item">
+          <div class="title">恢复最后一次储藏的文件并删除此次储存记录</div><code class="code">git stash pop</code>
+        </div>
+        <div class="item">
+          <div class="title">查看储藏列表</div><code class="code">git stash list</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>工作区状态</h3>
+        <div class="item">
+          <div class="title">查看工作区的信息</div><code class="code">git status</code>
+        </div>
+        <div class="item">
+          <div class="title">查看工作区信息并显示分支及追踪信息</div><code class="code">git status -sb</code>
+        </div>
+        <div class="item">
+          <div class="title">并查看忽略文件的信息</div><code class="code">git status --ignored</code>
+        </div>
+        <div class="item">
+          <div class="title">列出忽略文件</div><code class="code">git check-ignore *</code>
         </div>
       </div>
       <div class="block">
@@ -370,6 +358,18 @@
         <h3>确认坏的提交</h3>
         <div class="item">
           <div class="title">二分查找坏的提交</div><code class="code">git bisect start &lt;br&gt; git checkout HEAD~20 &lt;br&gt; git bisect good &lt;br&gt; git bisect bad &lt;br&gt; git bisect reset</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>暂存区文件</h3>
+        <div class="item">
+          <div class="title">列出暂存区文件</div><code class="code">git ls-files</code>
+        </div>
+        <div class="item">
+          <div class="title">列出忽略文件与未追踪文件</div><code class="code">git ls-files -o</code>
+        </div>
+        <div class="item">
+          <div class="title">子目录中显示所在位置</div><code class="code">git ls-files --full-name</code>
         </div>
       </div>
       <div class="block">

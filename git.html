@@ -33,6 +33,12 @@
           <div class="title">获取相应的配置</div><code class="code">git config --get core.editor</code>
         </div>
         <div class="item">
+          <div class="title">配置用户邮箱</div><code class="code">git config --global user.email &lt;mail&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">配置用户名</div><code class="code">git config --global user.name &lt;name&gt;</code>
+        </div>
+        <div class="item">
           <div class="title">输出彩色信息</div><code class="code">git config color.ui true</code>
         </div>
         <div class="item">
@@ -46,6 +52,24 @@
         </div>
         <div class="item">
           <div class="title">设置命令别名</div><code class="code">git config --global alias.co checkout</code>
+        </div>
+      </div>
+      <div class="block">
+        <h3>忽略文件</h3>
+        <div class="item">
+          <div class="title">添加本项目的忽略文件</div><code class="code">vim .gitignore</code>
+        </div>
+        <div class="item">
+          <div class="title">添加本项目的忽略文件并不把此文件纳入版本管理</div><code class="code">vim .git/info/exclude</code>
+        </div>
+        <div class="item">
+          <div class="title">设置全局忽略文件</div><code class="code">git config --global core.excludesfile ~/.gitignore</code>
+        </div>
+        <div class="item">
+          <div class="title">对已加入版本管理的文件不做更改检查</div><code class="code">git update-index --assume-unchanged &lt;file&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">对已加入版本管理的文件做更改检查</div><code class="code">git update-index --no-assume-unchanged &lt;file&gt;</code>
         </div>
       </div>
       <div class="block">

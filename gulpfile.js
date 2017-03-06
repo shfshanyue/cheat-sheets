@@ -10,28 +10,38 @@ const revReplace = require('gulp-rev-replace')
 
 const rename = require('gulp-rename')
 
-gulp.task('pug', ['style'], () => {
-  return gulp.src('src/*.pug')
-    .pipe(pug({
-      data: require('./git-tips.json'),
-      pretty: true
-    }))
-    .pipe(revReplace({
-      manifest: gulp.src('./public/manifest.json')  
-    }))
-    .pipe(gulp.dest('public'))
+const sheets = ['git', 'command']
+
+gulp.task('view', ['style'], () => {
+  return sheets.map(sheet =>
+    gulp.src('src/view-template.pug')
+      .pipe(pug({
+        data: require(`./sheets/${sheet}.json`),
+        pretty: true
+      }))
+      .pipe(rename({
+        basename: sheet  
+      }))
+      .pipe(revReplace({
+        manifest: gulp.src('./public/manifest.json')  
+      }))
+      .pipe(gulp.dest('public'))
+  )
 })
 
 gulp.task('markdown', () => {
-  return gulp.src('src/*.md')
-    .pipe(pug({
-      data: require('./git-tips.json'),
-      pretty: true
-    }))
-    .pipe(rename({
-      extname: '.md'  
-    }))
-    .pipe(gulp.dest('docs'))
+  return sheets.map(sheet =>
+    gulp.src('src/markdown-template.pug')
+      .pipe(pug({
+        data: require('./sheets/git.json'),
+        pretty: true
+      }))
+      .pipe(rename({
+        basename: sheet,
+        extname: '.md'  
+      }))
+      .pipe(gulp.dest('docs'))
+  )
 })
 
 gulp.task('style', () => {
@@ -46,8 +56,8 @@ gulp.task('style', () => {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('dev', ['pug', 'markdown'], () => {
-  gulp.watch('src/*', ['pug, markdown'])  
+gulp.task('dev', ['view', 'markdown'], () => {
+  gulp.watch('src/*', ['view', 'markdown'])  
 })
 
-gulp.task('default', ['pug', 'markdown'])
+gulp.task('default', ['view', 'markdown'])

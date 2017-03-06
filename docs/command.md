@@ -18,7 +18,7 @@
   <li><a href="#1-6">设置 git 的编辑器是 vim</a></li>
   <li><a href="#1-7">设置命令别名</a></li>
 </ul>
-<h4>操作暂存区文件</h4>
+<h4>添加删除移动文件</h4>
 <ul>
   <li><a href="#2-0">添加所有文件到暂存区，包括未追踪文件</a></li>
   <li><a href="#2-1">更新暂存区文件</a></li>
@@ -27,42 +27,37 @@
   <li><a href="#2-4">仅暂存区删除文件</a></li>
   <li><a href="#2-5">重命名暂存区文件</a></li>
 </ul>
+<h4>工作区状态</h4>
+<ul>
+  <li><a href="#3-0">查看工作区的信息</a></li>
+  <li><a href="#3-1">查看工作区信息并显示分支及追踪信息</a></li>
+  <li><a href="#3-2">并查看忽略文件的信息</a></li>
+  <li><a href="#3-3">列出忽略文件</a></li>
+</ul>
 <h4>显示更改</h4>
 <ul>
-  <li><a href="#3-0">显示工作区与暂存区的不同</a></li>
-  <li><a href="#3-1">显示暂存区与本地仓库的不同</a></li>
-  <li><a href="#3-2">显示工作区，暂存区与本地仓库的不同</a></li>
-  <li><a href="#3-3">仅显示改变的文件</a></li>
-  <li><a href="#3-4">比较两次提交的差异</a></li>
-  <li><a href="#3-5">显示某次 commit 所做的更改</a></li>
+  <li><a href="#4-0">显示工作区与暂存区的不同</a></li>
+  <li><a href="#4-1">显示暂存区与本地仓库的不同</a></li>
+  <li><a href="#4-2">显示工作区，暂存区与本地仓库的不同</a></li>
+  <li><a href="#4-3">仅显示改变的文件</a></li>
+  <li><a href="#4-4">比较两次提交的差异</a></li>
+  <li><a href="#4-5">显示某次 commit 所做的更改</a></li>
 </ul>
-<h4>分支</h4>
+<h4>列出文件信息</h4>
 <ul>
-  <li><a href="#4-0">列出本地分支</a></li>
-  <li><a href="#4-1">列出本地分支与追踪关系</a></li>
-  <li><a href="#4-2">列出远程分支</a></li>
-  <li><a href="#4-3">列出所有分支</a></li>
-  <li><a href="#4-4">建立分支不切换工作区</a></li>
-  <li><a href="#4-5">删除已被合并的分支</a></li>
-  <li><a href="#4-6">强制删除未被合并的分支</a></li>
-  <li><a href="#4-7">更改分支名字</a></li>
-  <li><a href="#4-8">设置追踪分支</a></li>
+  <li><a href="#5-0">列出暂存区文件</a></li>
+  <li><a href="#5-1">列出忽略文件与未追踪文件</a></li>
+  <li><a href="#5-2">子目录中显示所在位置</a></li>
 </ul>
-<h4>切换分支</h4>
+<h4>储藏与恢复</h4>
 <ul>
-  <li><a href="#5-0">切换分支</a></li>
-  <li><a href="#5-1">建立分支并切换工作区</a></li>
-  <li><a href="#5-2">切换到最近一次分支</a></li>
-  <li><a href="#5-3">建立无任何提交历史的分支</a></li>
+  <li><a href="#6-0">储藏(stash)工作区相对暂存区更改的文件</a></li>
+  <li><a href="#6-1">储藏文件并添加描述信息</a></li>
+  <li><a href="#6-2">恢复最后一次储藏的文件</a></li>
+  <li><a href="#6-3">恢复最后一次储藏的文件并删除此次储存记录</a></li>
+  <li><a href="#6-4">查看储藏列表</a></li>
 </ul>
-<h4>合并分支</h4>
-<ul>
-  <li><a href="#6-0">合并 develop 分支到本分支</a></li>
-  <li><a href="#6-1">强制合并分支后生成 merge commit</a></li>
-  <li><a href="#6-2">变基合并 develop 分支</a></li>
-  <li><a href="#6-3">变基进入交互式界面</a></li>
-</ul>
-<h4>重置工作区</h4>
+<h4>恢复工作区</h4>
 <ul>
   <li><a href="#7-0">重置工作区某文件</a></li>
   <li><a href="#7-1">重置工作区</a></li>
@@ -71,7 +66,7 @@
   <li><a href="#7-4">清除忽略文件</a></li>
   <li><a href="#7-5">清除未追踪目录及文件</a></li>
 </ul>
-<h4>重置暂存区与仓库</h4>
+<h4>回退版本</h4>
 <ul>
   <li><a href="#8-0">重置暂存区</a></li>
   <li><a href="#8-1">重置工作区和暂存区</a></li>
@@ -80,85 +75,90 @@
   <li><a href="#8-4">恢复本分支到某次提交，重置暂存区</a></li>
   <li><a href="#8-5">反向恢复一个提交并生成新的提交</a></li>
 </ul>
-<h4>储藏与恢复</h4>
+<h4>分支</h4>
 <ul>
-  <li><a href="#9-0">储藏(stash)工作区相对暂存区更改的文件</a></li>
-  <li><a href="#9-1">储藏文件并添加描述信息</a></li>
-  <li><a href="#9-2">恢复最后一次储藏的文件</a></li>
-  <li><a href="#9-3">恢复最后一次储藏的文件并删除此次储存记录</a></li>
-  <li><a href="#9-4">查看储藏列表</a></li>
+  <li><a href="#9-0">列出本地分支</a></li>
+  <li><a href="#9-1">列出本地分支与追踪关系</a></li>
+  <li><a href="#9-2">列出远程分支</a></li>
+  <li><a href="#9-3">列出所有分支</a></li>
+  <li><a href="#9-4">建立分支不切换工作区</a></li>
+  <li><a href="#9-5">删除已被合并的分支</a></li>
+  <li><a href="#9-6">强制删除未被合并的分支</a></li>
+  <li><a href="#9-7">更改分支名字</a></li>
+  <li><a href="#9-8">设置追踪分支</a></li>
 </ul>
-<h4>工作区状态</h4>
+<h4>切换分支</h4>
 <ul>
-  <li><a href="#10-0">查看工作区的信息</a></li>
-  <li><a href="#10-1">查看工作区信息并显示分支及追踪信息</a></li>
-  <li><a href="#10-2">并查看忽略文件的信息</a></li>
-  <li><a href="#10-3">列出忽略文件</a></li>
+  <li><a href="#10-0">切换分支</a></li>
+  <li><a href="#10-1">建立分支并切换工作区</a></li>
+  <li><a href="#10-2">切换到最近一次分支</a></li>
+  <li><a href="#10-3">建立无任何提交历史的分支</a></li>
+</ul>
+<h4>合并分支</h4>
+<ul>
+  <li><a href="#11-0">合并 develop 分支到本分支</a></li>
+  <li><a href="#11-1">强制合并分支后生成 merge commit</a></li>
+  <li><a href="#11-2">变基合并 develop 分支</a></li>
+  <li><a href="#11-3">变基进入交互式界面</a></li>
 </ul>
 <h4>远程仓库</h4>
 <ul>
-  <li><a href="#11-0">添加远程仓库并命名为 origin</a></li>
-  <li><a href="#11-1">修改远程仓库的地址</a></li>
-  <li><a href="#11-2">列出所有的远程仓库</a></li>
-  <li><a href="#11-3">列出远程仓库 origin 的详细信息</a></li>
+  <li><a href="#12-0">添加远程仓库并命名为 origin</a></li>
+  <li><a href="#12-1">修改远程仓库的地址</a></li>
+  <li><a href="#12-2">列出所有的远程仓库</a></li>
+  <li><a href="#12-3">列出远程仓库 origin 的详细信息</a></li>
 </ul>
 <h4>推送与拉取</h4>
 <ul>
-  <li><a href="#12-0">git config push.default simple</a></li>
-  <li><a href="#12-1">推送 master 到远程仓库</a></li>
-  <li><a href="#12-2">推送到远程仓库并建立追踪关系</a></li>
-  <li><a href="#12-3">推送时忽略 pre-push hook</a></li>
-  <li><a href="#12-4">从远程仓库拉取文件</a></li>
-  <li><a href="#12-5">设置 rebase 模式拉取代码</a></li>
+  <li><a href="#13-0">git config push.default simple</a></li>
+  <li><a href="#13-1">推送 master 到远程仓库</a></li>
+  <li><a href="#13-2">推送到远程仓库并建立追踪关系</a></li>
+  <li><a href="#13-3">推送时忽略 pre-push hook</a></li>
+  <li><a href="#13-4">从远程仓库拉取文件</a></li>
+  <li><a href="#13-5">设置 rebase 模式拉取代码</a></li>
 </ul>
 <h4>提交</h4>
 <ul>
-  <li><a href="#13-0">提交</a></li>
-  <li><a href="#13-1">追加提交重置提交信息</a></li>
-  <li><a href="#13-2">重置作者</a></li>
-  <li><a href="#13-3">允许空提交</a></li>
-  <li><a href="#13-4">提交时跳过 pre-commit hook</a></li>
+  <li><a href="#14-0">提交</a></li>
+  <li><a href="#14-1">追加提交重置提交信息</a></li>
+  <li><a href="#14-2">重置作者</a></li>
+  <li><a href="#14-3">允许空提交</a></li>
+  <li><a href="#14-4">提交时跳过 pre-commit hook</a></li>
 </ul>
 <h4>日志</h4>
 <ul>
-  <li><a href="#14-0">显示提交日志</a></li>
-  <li><a href="#14-1">显示某文件的提交日志</a></li>
-  <li><a href="#14-2">以图表形式显示提交日志</a></li>
-  <li><a href="#14-3">显示每次提交的对象信息</a></li>
-  <li><a href="#14-4">显示某个时间段的提交信息</a></li>
-  <li><a href="#14-5">显示指定作者的提交信息</a></li>
-  <li><a href="#14-6">根据提交信息中的关键字查找</a></li>
-  <li><a href="#14-7">列出二者特有的提交</a></li>
-  <li><a href="#14-8">列出 branch 有而 branch2 没有的提交</a></li>
-  <li><a href="#14-9">仅显示 merge commit</a></li>
-  <li><a href="#14-10">统计每个作者的提交情况</a></li>
-  <li><a href="#14-11">统计每个作者的提交个数</a></li>
+  <li><a href="#15-0">显示提交日志</a></li>
+  <li><a href="#15-1">显示某文件的提交日志</a></li>
+  <li><a href="#15-2">以图表形式显示提交日志</a></li>
+  <li><a href="#15-3">显示每次提交的对象信息</a></li>
+  <li><a href="#15-4">显示某个时间段的提交信息</a></li>
+  <li><a href="#15-5">显示指定作者的提交信息</a></li>
+  <li><a href="#15-6">根据提交信息中的关键字查找</a></li>
+  <li><a href="#15-7">列出二者特有的提交</a></li>
+  <li><a href="#15-8">列出 branch 有而 branch2 没有的提交</a></li>
+  <li><a href="#15-9">仅显示 merge commit</a></li>
+  <li><a href="#15-10">统计每个作者的提交情况</a></li>
+  <li><a href="#15-11">统计每个作者的提交个数</a></li>
 </ul>
 <h4>标签</h4>
 <ul>
-  <li><a href="#15-0">列出所有标签并显示标签信息</a></li>
-  <li><a href="#15-1">添加一个标签</a></li>
-  <li><a href="#15-2">在某个 commit 上添加一个标签</a></li>
-  <li><a href="#15-3">删除一个标签</a></li>
-  <li><a href="#15-4">查看某个标签信息</a></li>
-  <li><a href="#15-5">推送所有标签到远程仓库</a></li>
-  <li><a href="#15-6">使用最近的标签描述本次提交</a></li>
+  <li><a href="#16-0">列出所有标签并显示标签信息</a></li>
+  <li><a href="#16-1">添加一个标签</a></li>
+  <li><a href="#16-2">在某个 commit 上添加一个标签</a></li>
+  <li><a href="#16-3">删除一个标签</a></li>
+  <li><a href="#16-4">查看某个标签信息</a></li>
+  <li><a href="#16-5">推送所有标签到远程仓库</a></li>
+  <li><a href="#16-6">使用最近的标签描述本次提交</a></li>
 </ul>
 <h4>追责（甩锅）</h4>
 <ul>
-  <li><a href="#16-0">找到最后一次提交的作者</a></li>
-  <li><a href="#16-1">找到具体某一段的最后一次提交</a></li>
-  <li><a href="#16-2">查找文件的修改历史及明细</a></li>
+  <li><a href="#17-0">找到最后一次提交的作者</a></li>
+  <li><a href="#17-1">找到具体某一段的最后一次提交</a></li>
+  <li><a href="#17-2">查找文件的修改历史及明细</a></li>
 </ul>
 <h4>确认坏的提交</h4>
 <ul>
-  <li><a href="#17-0">二分查找坏的提交</a></li>
-</ul>
-<h4>暂存区文件</h4>
-<ul>
-  <li><a href="#18-0">列出暂存区文件</a></li>
-  <li><a href="#18-1">列出忽略文件与未追踪文件</a></li>
-  <li><a href="#18-2">子目录中显示所在位置</a></li>
+  <li><a href="#18-0">二分查找坏的提交</a></li>
 </ul>
 <h4>git 对象</h4>
 <ul>
@@ -230,7 +230,7 @@ git config --global core.editor vim
 ``` sh
 git config --global alias.co checkout
 ```
-<h2>操作暂存区文件</h2>
+<h2>添加删除移动文件</h2>
 <div id="2-0"></div>
 <h4>添加所有文件到暂存区，包括未追踪文件</h4>
 ``` sh
@@ -261,126 +261,101 @@ git rm --cached <file>
 ``` sh
 git mv <file> <file1>
 ```
-<h2>显示更改</h2>
+<h2>工作区状态</h2>
 <div id="3-0"></div>
+<h4>查看工作区的信息</h4>
+``` sh
+git status
+```
+<div id="3-1"></div>
+<h4>查看工作区信息并显示分支及追踪信息</h4>
+``` sh
+git status -sb
+```
+<div id="3-2"></div>
+<h4>并查看忽略文件的信息</h4>
+``` sh
+git status --ignored
+```
+<div id="3-3"></div>
+<h4>列出忽略文件</h4>
+``` sh
+git check-ignore *
+```
+<h2>显示更改</h2>
+<div id="4-0"></div>
 <h4>显示工作区与暂存区的不同</h4>
 ``` sh
 git diff
 ```
-<div id="3-1"></div>
+<div id="4-1"></div>
 <h4>显示暂存区与本地仓库的不同</h4>
 ``` sh
 git diff --cached
 ```
-<div id="3-2"></div>
+<div id="4-2"></div>
 <h4>显示工作区，暂存区与本地仓库的不同</h4>
 ``` sh
 git diff HEAD
 ```
-<div id="3-3"></div>
+<div id="4-3"></div>
 <h4>仅显示改变的文件</h4>
 ``` sh
 git diff --name-only
 ```
-<div id="3-4"></div>
+<div id="4-4"></div>
 <h4>比较两次提交的差异</h4>
 ``` sh
 git diff <commit> <commit>
 ```
-<div id="3-5"></div>
+<div id="4-5"></div>
 <h4>显示某次 commit 所做的更改</h4>
 ``` sh
 git show <commit>
 ```
-<h2>分支</h2>
-<div id="4-0"></div>
-<h4>列出本地分支</h4>
-``` sh
-git branch
-```
-<div id="4-1"></div>
-<h4>列出本地分支与追踪关系</h4>
-``` sh
-git branch -vv
-```
-<div id="4-2"></div>
-<h4>列出远程分支</h4>
-``` sh
-git branch -r
-```
-<div id="4-3"></div>
-<h4>列出所有分支</h4>
-``` sh
-git branch -a
-```
-<div id="4-4"></div>
-<h4>建立分支不切换工作区</h4>
-``` sh
-git branch <branch>
-```
-<div id="4-5"></div>
-<h4>删除已被合并的分支</h4>
-``` sh
-git branch -d <branch>
-```
-<div id="4-6"></div>
-<h4>强制删除未被合并的分支</h4>
-``` sh
-git branch -D <branch>
-```
-<div id="4-7"></div>
-<h4>更改分支名字</h4>
-``` sh
-git branch -m <newbranch>
-```
-<div id="4-8"></div>
-<h4>设置追踪分支</h4>
-``` sh
-git branch -u <upstream>
-```
-<h2>切换分支</h2>
+<h2>列出文件信息</h2>
 <div id="5-0"></div>
-<h4>切换分支</h4>
+<h4>列出暂存区文件</h4>
 ``` sh
-git checkout <branch>
+git ls-files
 ```
 <div id="5-1"></div>
-<h4>建立分支并切换工作区</h4>
+<h4>列出忽略文件与未追踪文件</h4>
 ``` sh
-git checkout -b <branch>
+git ls-files -o
 ```
 <div id="5-2"></div>
-<h4>切换到最近一次分支</h4>
+<h4>子目录中显示所在位置</h4>
 ``` sh
-git checkout -
+git ls-files --full-name
 ```
-<div id="5-3"></div>
-<h4>建立无任何提交历史的分支</h4>
-``` sh
-git checkout --orphan <branch>
-```
-<h2>合并分支</h2>
+<h2>储藏与恢复</h2>
 <div id="6-0"></div>
-<h4>合并 develop 分支到本分支</h4>
+<h4>储藏(stash)工作区相对暂存区更改的文件</h4>
 ``` sh
-git merge develop
+git stash
 ```
 <div id="6-1"></div>
-<h4>强制合并分支后生成 merge commit</h4>
+<h4>储藏文件并添加描述信息</h4>
 ``` sh
-git merge -no-ff develop
+git stash save <message>
 ```
 <div id="6-2"></div>
-<h4>变基合并 develop 分支</h4>
+<h4>恢复最后一次储藏的文件</h4>
 ``` sh
-git rebase develop
+git stash apply
 ```
 <div id="6-3"></div>
-<h4>变基进入交互式界面</h4>
+<h4>恢复最后一次储藏的文件并删除此次储存记录</h4>
 ``` sh
-git rebase -i
+git stash pop
 ```
-<h2>重置工作区</h2>
+<div id="6-4"></div>
+<h4>查看储藏列表</h4>
+``` sh
+git stash list
+```
+<h2>恢复工作区</h2>
 <div id="7-0"></div>
 <h4>重置工作区某文件</h4>
 ``` sh
@@ -411,7 +386,7 @@ git clean -Xf
 ``` sh
 git clean -df
 ```
-<h2>重置暂存区与仓库</h2>
+<h2>回退版本</h2>
 <div id="8-0"></div>
 <h4>重置暂存区</h4>
 ``` sh
@@ -442,265 +417,290 @@ git reset --mixed <commit-ish>
 ``` sh
 git revert <commit>
 ```
-<h2>储藏与恢复</h2>
+<h2>分支</h2>
 <div id="9-0"></div>
-<h4>储藏(stash)工作区相对暂存区更改的文件</h4>
+<h4>列出本地分支</h4>
 ``` sh
-git stash
+git branch
 ```
 <div id="9-1"></div>
-<h4>储藏文件并添加描述信息</h4>
+<h4>列出本地分支与追踪关系</h4>
 ``` sh
-git stash save <message>
+git branch -vv
 ```
 <div id="9-2"></div>
-<h4>恢复最后一次储藏的文件</h4>
+<h4>列出远程分支</h4>
 ``` sh
-git stash apply
+git branch -r
 ```
 <div id="9-3"></div>
-<h4>恢复最后一次储藏的文件并删除此次储存记录</h4>
+<h4>列出所有分支</h4>
 ``` sh
-git stash pop
+git branch -a
 ```
 <div id="9-4"></div>
-<h4>查看储藏列表</h4>
+<h4>建立分支不切换工作区</h4>
 ``` sh
-git stash list
+git branch <branch>
 ```
-<h2>工作区状态</h2>
-<div id="10-0"></div>
-<h4>查看工作区的信息</h4>
+<div id="9-5"></div>
+<h4>删除已被合并的分支</h4>
 ``` sh
-git status
+git branch -d <branch>
+```
+<div id="9-6"></div>
+<h4>强制删除未被合并的分支</h4>
+``` sh
+git branch -D <branch>
+```
+<div id="9-7"></div>
+<h4>更改分支名字</h4>
+``` sh
+git branch -m <newbranch>
+```
+<div id="9-8"></div>
+<h4>设置追踪分支</h4>
+``` sh
+git branch -u <upstream>
+```
+<h2>切换分支</h2>
+<div id="10-0"></div>
+<h4>切换分支</h4>
+``` sh
+git checkout <branch>
 ```
 <div id="10-1"></div>
-<h4>查看工作区信息并显示分支及追踪信息</h4>
+<h4>建立分支并切换工作区</h4>
 ``` sh
-git status -sb
+git checkout -b <branch>
 ```
 <div id="10-2"></div>
-<h4>并查看忽略文件的信息</h4>
+<h4>切换到最近一次分支</h4>
 ``` sh
-git status --ignored
+git checkout -
 ```
 <div id="10-3"></div>
-<h4>列出忽略文件</h4>
+<h4>建立无任何提交历史的分支</h4>
 ``` sh
-git check-ignore *
+git checkout --orphan <branch>
+```
+<h2>合并分支</h2>
+<div id="11-0"></div>
+<h4>合并 develop 分支到本分支</h4>
+``` sh
+git merge develop
+```
+<div id="11-1"></div>
+<h4>强制合并分支后生成 merge commit</h4>
+``` sh
+git merge -no-ff develop
+```
+<div id="11-2"></div>
+<h4>变基合并 develop 分支</h4>
+``` sh
+git rebase develop
+```
+<div id="11-3"></div>
+<h4>变基进入交互式界面</h4>
+``` sh
+git rebase -i
 ```
 <h2>远程仓库</h2>
-<div id="11-0"></div>
+<div id="12-0"></div>
 <h4>添加远程仓库并命名为 origin</h4>
 ``` sh
 git remote add origin <git-repo>
 ```
-<div id="11-1"></div>
+<div id="12-1"></div>
 <h4>修改远程仓库的地址</h4>
 ``` sh
 git remote set-url origin <git-repo>
 ```
-<div id="11-2"></div>
+<div id="12-2"></div>
 <h4>列出所有的远程仓库</h4>
 ``` sh
 git remote -v
 ```
-<div id="11-3"></div>
+<div id="12-3"></div>
 <h4>列出远程仓库 origin 的详细信息</h4>
 ``` sh
 git remote show origin
 ```
 <h2>推送与拉取</h2>
-<div id="12-0"></div>
+<div id="13-0"></div>
 <h4>git config push.default simple</h4>
 ``` sh
 设置默认推送策略为 simple
 ```
-<div id="12-1"></div>
+<div id="13-1"></div>
 <h4>推送 master 到远程仓库</h4>
 ``` sh
 git push origin master
 ```
-<div id="12-2"></div>
+<div id="13-2"></div>
 <h4>推送到远程仓库并建立追踪关系</h4>
 ``` sh
 git push -u origin master
 ```
-<div id="12-3"></div>
+<div id="13-3"></div>
 <h4>推送时忽略 pre-push hook</h4>
 ``` sh
 git push -n
 ```
-<div id="12-4"></div>
+<div id="13-4"></div>
 <h4>从远程仓库拉取文件</h4>
 ``` sh
 git pull origin master
 ```
-<div id="12-5"></div>
+<div id="13-5"></div>
 <h4>设置 rebase 模式拉取代码</h4>
 ``` sh
 git pull --rebase origin master
 ```
 <h2>提交</h2>
-<div id="13-0"></div>
+<div id="14-0"></div>
 <h4>提交</h4>
 ``` sh
 git commit -m <message>
 ```
-<div id="13-1"></div>
+<div id="14-1"></div>
 <h4>追加提交重置提交信息</h4>
 ``` sh
 git commit --amend -m <message>
 ```
-<div id="13-2"></div>
+<div id="14-2"></div>
 <h4>重置作者</h4>
 ``` sh
 git commit --amend --author=<mail> 
 ```
-<div id="13-3"></div>
+<div id="14-3"></div>
 <h4>允许空提交</h4>
 ``` sh
 git commit --allow-empty
 ```
-<div id="13-4"></div>
+<div id="14-4"></div>
 <h4>提交时跳过 pre-commit hook</h4>
 ``` sh
 git commit -n
 ```
 <h2>日志</h2>
-<div id="14-0"></div>
+<div id="15-0"></div>
 <h4>显示提交日志</h4>
 ``` sh
 git log
 ```
-<div id="14-1"></div>
+<div id="15-1"></div>
 <h4>显示某文件的提交日志</h4>
 ``` sh
 git log -p <file>
 ```
-<div id="14-2"></div>
+<div id="15-2"></div>
 <h4>以图表形式显示提交日志</h4>
 ``` sh
 git log --graph --all --oneline --decorate
 ```
-<div id="14-3"></div>
+<div id="15-3"></div>
 <h4>显示每次提交的对象信息</h4>
 ``` sh
 git log --pretty=raw
 ```
-<div id="14-4"></div>
+<div id="15-4"></div>
 <h4>显示某个时间段的提交信息</h4>
 ``` sh
 git log --since '2 days ago'
 ```
-<div id="14-5"></div>
+<div id="15-5"></div>
 <h4>显示指定作者的提交信息</h4>
 ``` sh
 git log --author=<author>
 ```
-<div id="14-6"></div>
+<div id="15-6"></div>
 <h4>根据提交信息中的关键字查找</h4>
 ``` sh
 git log --grep=<keyword>
 ```
-<div id="14-7"></div>
+<div id="15-7"></div>
 <h4>列出二者特有的提交</h4>
 ``` sh
 git log master...develop
 ```
-<div id="14-8"></div>
+<div id="15-8"></div>
 <h4>列出 branch 有而 branch2 没有的提交</h4>
 ``` sh
 git log branch2..branch
 ```
-<div id="14-9"></div>
+<div id="15-9"></div>
 <h4>仅显示 merge commit</h4>
 ``` sh
 git log --merges
 ```
-<div id="14-10"></div>
+<div id="15-10"></div>
 <h4>统计每个作者的提交情况</h4>
 ``` sh
 git shortlog
 ```
-<div id="14-11"></div>
+<div id="15-11"></div>
 <h4>统计每个作者的提交个数</h4>
 ``` sh
 git shortlog -sn
 ```
 <h2>标签</h2>
-<div id="15-0"></div>
+<div id="16-0"></div>
 <h4>列出所有标签并显示标签信息</h4>
 ``` sh
 git tag -ln
 ```
-<div id="15-1"></div>
+<div id="16-1"></div>
 <h4>添加一个标签</h4>
 ``` sh
 git tag -a v1.0.0 -m <message>
 ```
-<div id="15-2"></div>
+<div id="16-2"></div>
 <h4>在某个 commit 上添加一个标签</h4>
 ``` sh
 git tag v0.9.0 <commit>
 ```
-<div id="15-3"></div>
+<div id="16-3"></div>
 <h4>删除一个标签</h4>
 ``` sh
 git tag -d v1.0.0
 ```
-<div id="15-4"></div>
+<div id="16-4"></div>
 <h4>查看某个标签信息</h4>
 ``` sh
 git show v1.0.0
 ```
-<div id="15-5"></div>
+<div id="16-5"></div>
 <h4>推送所有标签到远程仓库</h4>
 ``` sh
 git push --tags
 ```
-<div id="15-6"></div>
+<div id="16-6"></div>
 <h4>使用最近的标签描述本次提交</h4>
 ``` sh
 git describe
 ```
 <h2>追责（甩锅）</h2>
-<div id="16-0"></div>
+<div id="17-0"></div>
 <h4>找到最后一次提交的作者</h4>
 ``` sh
 git blame <file>
 ```
-<div id="16-1"></div>
+<div id="17-1"></div>
 <h4>找到具体某一段的最后一次提交</h4>
 ``` sh
 git blame -L 10,18 <file>
 ```
-<div id="16-2"></div>
+<div id="17-2"></div>
 <h4>查找文件的修改历史及明细</h4>
 ``` sh
 git log -p <file>
 ```
 <h2>确认坏的提交</h2>
-<div id="17-0"></div>
+<div id="18-0"></div>
 <h4>二分查找坏的提交</h4>
 ``` sh
 git bisect start <br> git checkout HEAD~20 <br> git bisect good <br> git bisect bad <br> git bisect reset
-```
-<h2>暂存区文件</h2>
-<div id="18-0"></div>
-<h4>列出暂存区文件</h4>
-``` sh
-git ls-files
-```
-<div id="18-1"></div>
-<h4>列出忽略文件与未追踪文件</h4>
-``` sh
-git ls-files -o
-```
-<div id="18-2"></div>
-<h4>子目录中显示所在位置</h4>
-``` sh
-git ls-files --full-name
 ```
 <h2>git 对象</h2>
 <div id="19-0"></div>

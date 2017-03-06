@@ -59,7 +59,7 @@
       ]
     },
     {
-      "title": "操作暂存区文件",
+      "title": "添加删除移动文件",
       "commands": [
         {
           "title": "添加所有文件到暂存区，包括未追踪文件",
@@ -84,6 +84,27 @@
         {
           "title": "重命名暂存区文件",
           "command": "git mv <file> <file1>"
+        }
+      ]
+    },
+    {
+      "title": "工作区状态",
+      "commands": [
+        {
+          "title": "查看工作区的信息",
+          "command": "git status"
+        },
+        {
+          "title": "查看工作区信息并显示分支及追踪信息",
+          "command": "git status -sb"
+        },
+        {
+          "title": "并查看忽略文件的信息",
+          "command": "git status --ignored"
+        },
+        {
+          "title": "列出忽略文件",
+          "command": "git check-ignore *"
         }
       ]
     },
@@ -113,6 +134,109 @@
         {
           "title": "显示某次 commit 所做的更改",
           "command": "git show <commit>"
+        }
+      ]
+    },
+    {
+      "title": "列出文件信息",
+      "commands": [
+        {
+          "title": "列出暂存区文件",
+          "command": "git ls-files"
+        },
+        {
+          "title": "列出忽略文件与未追踪文件",
+          "command": "git ls-files -o"
+        },
+        {
+          "title": "子目录中显示所在位置",
+          "command": "git ls-files --full-name"
+        }
+      ]
+    },
+    {
+      "title": "储藏与恢复",
+      "commands": [
+        {
+          "title": "储藏(stash)工作区相对暂存区更改的文件",
+          "command": "git stash"
+        },
+        {
+          "title": "储藏文件并添加描述信息",
+          "command": "git stash save <message>"
+        },
+        {
+          "title": "恢复最后一次储藏的文件",
+          "command": "git stash apply"
+        },
+        {
+          "title": "恢复最后一次储藏的文件并删除此次储存记录",
+          "command": "git stash pop"
+        },
+        {
+          "title": "查看储藏列表",
+          "command": "git stash list"
+        }
+      ]
+    },
+    {
+      "title": "恢复工作区",
+      "commands": [
+        {
+          "title": "重置工作区某文件",
+          "command": "git checkout -- <file>"
+        },
+        {
+          "title": "重置工作区",
+          "command": "git checkout ."
+        },
+        {
+          "title": "列出将要清除的未追踪文件",
+          "command": "git clean -n"
+        },
+        {
+          "title": "清除未追踪文件",
+          "command": "git clean -f"
+        },
+        {
+          "title": "清除忽略文件",
+          "command": "git clean -Xf"
+        },
+        {
+          "title": "清除未追踪目录及文件",
+          "command": "git clean -df"
+        }
+      ]
+    },
+    {
+      "title": "回退版本",
+      "commands": [
+        {
+          "title": "重置暂存区",
+          "command": "git reset"
+        },
+        {
+          "title": "重置工作区和暂存区",
+          "command": "git reset --hard",
+          "alternatives": [
+            "git reset && git checkout . && git clean -df"
+          ]
+        },
+        {
+          "title": "恢复本分支到某次提交，重置工作区与暂存区",
+          "command": "git reset --hard <commit-ish>"
+        },
+        {
+          "title": "恢复本分支到某次提交",
+          "command": "git reset --soft <commit-ish>"
+        },
+        {
+          "title": "恢复本分支到某次提交，重置暂存区",
+          "command": "git reset --mixed <commit-ish>"
+        },
+        {
+          "title": "反向恢复一个提交并生成新的提交",
+          "command": "git revert <commit>"
         }
       ]
     },
@@ -202,113 +326,6 @@
         {
           "title": "变基进入交互式界面",
           "command": "git rebase -i"
-        }
-      ]
-    },
-    {
-      "title": "重置工作区",
-      "commands": [
-        {
-          "title": "重置工作区某文件",
-          "command": "git checkout -- <file>"
-        },
-        {
-          "title": "重置工作区",
-          "command": "git checkout ."
-        },
-        {
-          "title": "列出将要清除的未追踪文件",
-          "command": "git clean -n"
-        },
-        {
-          "title": "清除未追踪文件",
-          "command": "git clean -f"
-        },
-        {
-          "title": "清除忽略文件",
-          "command": "git clean -Xf"
-        },
-        {
-          "title": "清除未追踪目录及文件",
-          "command": "git clean -df"
-        }
-      ]
-    },
-    {
-      "title": "重置暂存区与仓库",
-      "commands": [
-        {
-          "title": "重置暂存区",
-          "command": "git reset"
-        },
-        {
-          "title": "重置工作区和暂存区",
-          "command": "git reset --hard",
-          "alternatives": [
-            "git reset && git checkout . && git clean -df"
-          ]
-        },
-        {
-          "title": "恢复本分支到某次提交，重置工作区与暂存区",
-          "command": "git reset --hard <commit-ish>"
-        },
-        {
-          "title": "恢复本分支到某次提交",
-          "command": "git reset --soft <commit-ish>"
-        },
-        {
-          "title": "恢复本分支到某次提交，重置暂存区",
-          "command": "git reset --mixed <commit-ish>"
-        },
-        {
-          "title": "反向恢复一个提交并生成新的提交",
-          "command": "git revert <commit>"
-        }
-      ]
-    },
-    {
-      "title": "储藏与恢复",
-      "commands": [
-        {
-          "title": "储藏(stash)工作区相对暂存区更改的文件",
-          "command": "git stash"
-        },
-        {
-          "title": "储藏文件并添加描述信息",
-          "command": "git stash save <message>"
-        },
-        {
-          "title": "恢复最后一次储藏的文件",
-          "command": "git stash apply"
-        },
-        {
-          "title": "恢复最后一次储藏的文件并删除此次储存记录",
-          "command": "git stash pop"
-        },
-        {
-          "title": "查看储藏列表",
-          "command": "git stash list"
-        }
-      ]
-    },
-    {
-      "title": "工作区状态",
-      "commands": [
-        {
-          "title": "查看工作区的信息",
-          "command": "git status"
-        },
-        {
-          "title": "查看工作区信息并显示分支及追踪信息",
-          "command": "git status -sb"
-        },
-        {
-          "title": "并查看忽略文件的信息",
-          "command": "git status --ignored"
-        },
-        {
-          "title": "列出忽略文件",
-          "command": "git check-ignore *"
         }
       ]
     },
@@ -500,23 +517,6 @@
         {
           "title": "二分查找坏的提交",
           "command": "git bisect start <br> git checkout HEAD~20 <br> git bisect good <br> git bisect bad <br> git bisect reset"
-        }
-      ]
-    },
-    {
-      "title": "暂存区文件",
-      "commands": [
-        {
-          "title": "列出暂存区文件",
-          "command": "git ls-files"
-        },
-        {
-          "title": "列出忽略文件与未追踪文件",
-          "command": "git ls-files -o"
-        },
-        {
-          "title": "子目录中显示所在位置",
-          "command": "git ls-files --full-name"
         }
       ]
     },

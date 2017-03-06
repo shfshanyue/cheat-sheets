@@ -37,6 +37,14 @@
           "command": "git config --get core.editor"
         },
         {
+          "title": "配置用户邮箱",
+          "command": "git config --global user.email <mail>"
+        },
+        {
+          "title": "配置用户名",
+          "command": "git config --global user.name <name>"
+        },
+        {
           "title": "输出彩色信息",
           "command": "git config color.ui true"
         },
@@ -55,6 +63,31 @@
         {
           "title": "设置命令别名",
           "command": "git config --global alias.co checkout"
+        }
+      ]
+    },
+    {
+      "title": "忽略文件",
+      "commands": [
+        {
+          "title": "添加本项目的忽略文件",
+          "command": "vim .gitignore"
+        },
+        {
+          "title": "添加本项目的忽略文件并不把此文件纳入版本管理",
+          "command": "vim .git/info/exclude"
+        },
+        {
+          "title": "设置全局忽略文件",
+          "command": "git config --global core.excludesfile ~/.gitignore"
+        },
+        {
+          "title": "对已加入版本管理的文件不做更改检查",
+          "command": "git update-index --assume-unchanged <file>"
+        },
+        {
+          "title": "对已加入版本管理的文件做更改检查",
+          "command": "git update-index --no-assume-unchanged <file>"
         }
       ]
     },

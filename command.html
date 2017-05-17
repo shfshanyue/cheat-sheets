@@ -3,394 +3,235 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Git Cheat Sheet</title>
+    <title></title>
     <link rel="stylesheet" href="style-77cd341d15.css">
   </head>
   <body>
-    <h1 class="subject">Git Cheat Sheet<small><a href="//github.com/shfshanyue/cheat-sheets/blob/master/docs/git.md">Markdown</a><a href="//github.com/shfshanyue/cheat-sheets">Github</a></small></h1>
+    <h1 class="subject"><small><a href="https://github.com/shfshanyue/cheat-sheets/blob/master/docs/command.md">Markdown</a><a href="https://github.com/shfshanyue/cheat-sheets">Github</a></small></h1>
     <div class="container">
       <div class="block">
-        <h3>初始化仓库</h3>
+        <h3>操作目录</h3>
         <div class="item">
-          <div class="title">初始化仓库</div><code class="code">git init</code>
+          <div class="title">进入最近离开目录</div><code class="code">cd -</code>
         </div>
         <div class="item">
-          <div class="title">初始化裸仓库</div><code class="code">git init --bare</code>
+          <div class="title">打印目录列表，包含隐藏文件</div><code class="code">ls -lah</code>
         </div>
         <div class="item">
-          <div class="title">克隆仓库</div><code class="code">git clone &lt;git-repo&gt;</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>配置</h3>
-        <div class="item">
-          <div class="title">编辑配置文件</div><code class="code">git config [--global] -e</code>
+          <div class="title">递归打印目录信息</div><code class="code">ls -lahR</code>
         </div>
         <div class="item">
-          <div class="title">列出配置信息</div><code class="code">git config -l</code>
+          <div class="title">递归打印目录信息</div><code class="code">find .</code>
         </div>
         <div class="item">
-          <div class="title">获取相应的配置</div><code class="code">git config --get core.editor</code>
-        </div>
-        <div class="item">
-          <div class="title">输出彩色信息</div><code class="code">git config color.ui true</code>
-        </div>
-        <div class="item">
-          <div class="title">设置文件名大小写敏感</div><code class="code">git config core.ignoreCase false</code>
-        </div>
-        <div class="item">
-          <div class="title">设置推送策略为 simple</div><code class="code">git config push.default simple</code>
-        </div>
-        <div class="item">
-          <div class="title">设置 git 的编辑器是 vim</div><code class="code">git config --global core.editor vim</code>
-        </div>
-        <div class="item">
-          <div class="title">设置命令别名</div><code class="code">git config --global alias.co checkout</code>
+          <div class="title">树状结构打印目录信息</div><code class="code">tree</code>
         </div>
       </div>
       <div class="block">
-        <h3>操作暂存区文件</h3>
+        <h3>查看文件内容</h3>
         <div class="item">
-          <div class="title">添加所有文件到暂存区，包括未追踪文件</div><code class="code">git add -A</code>
+          <div class="title">查看文件内容</div><code class="code">cat &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">更新暂存区文件</div><code class="code">git add -u</code>
+          <div class="title">查看文件内容，并显示行号</div><code class="code">cat &lt;file&gt; -n</code>
         </div>
         <div class="item">
-          <div class="title">交互式添加文件到暂存区</div><code class="code">git add -p</code>
+          <div class="title">查看多个文件，并写入</div><code class="code">cat &lt;file1&gt; &lt;file2&gt; &lt;file3&gt; &gt; &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">工作区与暂存区删除文件</div><code class="code">git rm &lt;file&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">仅暂存区删除文件</div><code class="code">git rm --cached &lt;file&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">重命名暂存区文件</div><code class="code">git mv &lt;file&gt; &lt;file1&gt;</code>
+          <div class="title">统计文件行数，单词数与字符数</div><code class="code">wc &lt;file&gt;</code>
         </div>
       </div>
       <div class="block">
-        <h3>显示更改</h3>
+        <h3>快速查看文件内容</h3>
         <div class="item">
-          <div class="title">显示工作区与暂存区的不同</div><code class="code">git diff</code>
+          <div class="title">分页查看文件内容</div><code class="code">more &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">显示暂存区与本地仓库的不同</div><code class="code">git diff --cached</code>
+          <div class="title">定位到第十行</div><code class="code">more +10 &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">显示工作区，暂存区与本地仓库的不同</div><code class="code">git diff HEAD</code>
+          <div class="title">更加灵活，使用 vi 命令操作页面</div><code class="code">less &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">仅显示改变的文件</div><code class="code">git diff --name-only</code>
+          <div class="title">显示文件前三行</div><code class="code">head -3 &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">比较两次提交的差异</div><code class="code">git diff &lt;commit&gt; &lt;commit&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">显示某次 commit 所做的更改</div><code class="code">git show &lt;commit&gt;</code>
+          <div class="title">显示文件后三行</div><code class="code">tail -3 &lt;file&gt;</code>
         </div>
       </div>
       <div class="block">
-        <h3>分支</h3>
+        <h3>搜索路径</h3>
         <div class="item">
-          <div class="title">列出本地分支</div><code class="code">git branch</code>
+          <div class="title">查找文件位置</div><code class="code">find . -name Readme</code>
         </div>
         <div class="item">
-          <div class="title">列出本地分支与追踪关系</div><code class="code">git branch -vv</code>
+          <div class="title">查找文件或文件夹位置</div><code class="code">find . -name '*.js'</code>
         </div>
         <div class="item">
-          <div class="title">列出远程分支</div><code class="code">git branch -r</code>
+          <div class="title">查找 js 或者 jsx 结尾的文件或者目录</div><code class="code">find . -name '*.js' -o -name '*.jsx'</code>
         </div>
         <div class="item">
-          <div class="title">列出所有分支</div><code class="code">git branch -a</code>
+          <div class="title">查找属于 user 的文件或者目录</div><code class="code">find . -user &lt;user&gt;</code>
         </div>
         <div class="item">
-          <div class="title">建立分支不切换工作区</div><code class="code">git branch &lt;branch&gt;</code>
+          <div class="title">只查找文件</div><code class="code">find . -type d</code>
         </div>
         <div class="item">
-          <div class="title">删除已被合并的分支</div><code class="code">git branch -d &lt;branch&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">强制删除未被合并的分支</div><code class="code">git branch -D &lt;branch&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">更改分支名字</div><code class="code">git branch -m &lt;newbranch&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">设置追踪分支</div><code class="code">git branch -u &lt;upstream&gt;</code>
+          <div class="title">查看十分钟内修改的文件</div><code class="code">find . -type d -cmin 10</code>
         </div>
       </div>
       <div class="block">
-        <h3>切换分支</h3>
+        <h3>搜索字符串</h3>
         <div class="item">
-          <div class="title">切换分支</div><code class="code">git checkout &lt;branch&gt;</code>
+          <div class="title">在特定文件下查找匹配字符串</div><code class="code">grep &lt;reg&gt; &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">建立分支并切换工作区</div><code class="code">git checkout -b &lt;branch&gt;</code>
+          <div class="title">查找字符串并打印行数</div><code class="code">grep -n &lt;reg&gt; &lt;file&gt;</code>
         </div>
         <div class="item">
-          <div class="title">切换到最近一次分支</div><code class="code">git checkout -</code>
+          <div class="title">在当前目录下查找匹配字符串</div><code class="code">grep -rn &lt;reg&gt;</code>
         </div>
         <div class="item">
-          <div class="title">建立无任何提交历史的分支</div><code class="code">git checkout --orphan &lt;branch&gt;</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>合并分支</h3>
-        <div class="item">
-          <div class="title">合并 develop 分支到本分支</div><code class="code">git merge develop</code>
-        </div>
-        <div class="item">
-          <div class="title">强制合并分支后生成 merge commit</div><code class="code">git merge -no-ff develop</code>
-        </div>
-        <div class="item">
-          <div class="title">变基合并 develop 分支</div><code class="code">git rebase develop</code>
-        </div>
-        <div class="item">
-          <div class="title">变基进入交互式界面</div><code class="code">git rebase -i</code>
+          <div class="title">在当前目录下查找匹配字符串</div><code class="code">ag &lt;reg&gt;</code>
         </div>
       </div>
       <div class="block">
-        <h3>重置工作区</h3>
+        <h3>用户信息</h3>
         <div class="item">
-          <div class="title">重置工作区某文件</div><code class="code">git checkout -- &lt;file&gt;</code>
+          <div class="title">打印用户名</div><code class="code">whoami</code>
         </div>
         <div class="item">
-          <div class="title">重置工作区</div><code class="code">git checkout .</code>
+          <div class="title">打印本机的各种 id</div><code class="code">id</code>
         </div>
         <div class="item">
-          <div class="title">列出将要清除的未追踪文件</div><code class="code">git clean -n</code>
+          <div class="title">打印 uid</div><code class="code">id -u</code>
         </div>
         <div class="item">
-          <div class="title">清除未追踪文件</div><code class="code">git clean -f</code>
+          <div class="title">打印主机名</div><code class="code">hostname</code>
         </div>
         <div class="item">
-          <div class="title">清除忽略文件</div><code class="code">git clean -Xf</code>
-        </div>
-        <div class="item">
-          <div class="title">清除未追踪目录及文件</div><code class="code">git clean -df</code>
+          <div class="title">更改主机名</div><code class="code">hostname &lt;hostname&gt;</code>
         </div>
       </div>
       <div class="block">
-        <h3>重置暂存区与仓库</h3>
+        <h3>显示程序位置</h3>
         <div class="item">
-          <div class="title">重置暂存区</div><code class="code">git reset</code>
+          <div class="title">打印 python 的执行路径</div><code class="code">which python</code>
         </div>
         <div class="item">
-          <div class="title">重置工作区和暂存区</div><code class="code">git reset --hard</code>
+          <div class="title">打印 python 的执行路径</div><code class="code">where python</code>
         </div>
         <div class="item">
-          <div class="title">恢复本分支到某次提交，重置工作区与暂存区</div><code class="code">git reset --hard &lt;commit-ish&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复本分支到某次提交</div><code class="code">git reset --soft &lt;commit-ish&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复本分支到某次提交，重置暂存区</div><code class="code">git reset --mixed &lt;commit-ish&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">反向恢复一个提交并生成新的提交</div><code class="code">git revert &lt;commit&gt;</code>
+          <div class="title">打印 python 的执行路径</div><code class="code">whereis python</code>
         </div>
       </div>
       <div class="block">
-        <h3>储藏与恢复</h3>
+        <h3>显示系统信息</h3>
         <div class="item">
-          <div class="title">储藏(stash)工作区相对暂存区更改的文件</div><code class="code">git stash</code>
+          <div class="title">打印系统信息</div><code class="code">uname -a</code>
         </div>
         <div class="item">
-          <div class="title">储藏文件并添加描述信息</div><code class="code">git stash save &lt;message&gt;</code>
+          <div class="title">打印文件系统信息</div><code class="code">df -h</code>
         </div>
         <div class="item">
-          <div class="title">恢复最后一次储藏的文件</div><code class="code">git stash apply</code>
-        </div>
-        <div class="item">
-          <div class="title">恢复最后一次储藏的文件并删除此次储存记录</div><code class="code">git stash pop</code>
-        </div>
-        <div class="item">
-          <div class="title">查看储藏列表</div><code class="code">git stash list</code>
+          <div class="title">打印开机时间</div><code class="code">uptime</code>
         </div>
       </div>
       <div class="block">
-        <h3>工作区状态</h3>
+        <h3>显示系统信息</h3>
         <div class="item">
-          <div class="title">查看工作区的信息</div><code class="code">git status</code>
+          <div class="title">打印系统信息</div><code class="code">uname -a</code>
         </div>
         <div class="item">
-          <div class="title">查看工作区信息并显示分支及追踪信息</div><code class="code">git status -sb</code>
+          <div class="title">打印文件系统信息</div><code class="code">df -h</code>
         </div>
         <div class="item">
-          <div class="title">并查看忽略文件的信息</div><code class="code">git status --ignored</code>
+          <div class="title">打印开机时间以及 CPU 负载情况</div><code class="code">uptime</code>
         </div>
         <div class="item">
-          <div class="title">列出忽略文件</div><code class="code">git check-ignore *</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>远程仓库</h3>
-        <div class="item">
-          <div class="title">添加远程仓库并命名为 origin</div><code class="code">git remote add origin &lt;git-repo&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">修改远程仓库的地址</div><code class="code">git remote set-url origin &lt;git-repo&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">列出所有的远程仓库</div><code class="code">git remote -v</code>
-        </div>
-        <div class="item">
-          <div class="title">列出远程仓库 origin 的详细信息</div><code class="code">git remote show origin</code>
+          <div class="title">查看处理器信息</div><code class="code">cat /proc/cpuinfo</code>
         </div>
       </div>
       <div class="block">
-        <h3>推送与拉取</h3>
+        <h3>排序与去重</h3>
         <div class="item">
-          <div class="title">git config push.default simple</div><code class="code">设置默认推送策略为 simple</code>
+          <div class="title">顺序打印</div><code class="code">ls -lah | sort</code>
         </div>
         <div class="item">
-          <div class="title">推送 master 到远程仓库</div><code class="code">git push origin master</code>
+          <div class="title">逆序打印</div><code class="code">ls -lah | sort -r</code>
         </div>
         <div class="item">
-          <div class="title">推送到远程仓库并建立追踪关系</div><code class="code">git push -u origin master</code>
-        </div>
-        <div class="item">
-          <div class="title">推送时忽略 pre-push hook</div><code class="code">git push -n</code>
-        </div>
-        <div class="item">
-          <div class="title">从远程仓库拉取文件</div><code class="code">git pull origin master</code>
-        </div>
-        <div class="item">
-          <div class="title">设置 rebase 模式拉取代码</div><code class="code">git pull --rebase origin master</code>
+          <div class="title">排序后去重</div><code class="code">cat &lt;file&gt; | sort -u</code>
         </div>
       </div>
       <div class="block">
-        <h3>提交</h3>
+        <h3>链接</h3>
         <div class="item">
-          <div class="title">提交</div><code class="code">git commit -m &lt;message&gt;</code>
+          <div class="title">创建硬链接, target 最好使用绝对路径</div><code class="code">ln &lt;target&gt; &lt;link-name&gt;</code>
         </div>
         <div class="item">
-          <div class="title">追加提交重置提交信息</div><code class="code">git commit --amend -m &lt;message&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">重置作者</div><code class="code">git commit --amend --author=&lt;mail&gt; </code>
-        </div>
-        <div class="item">
-          <div class="title">允许空提交</div><code class="code">git commit --allow-empty</code>
-        </div>
-        <div class="item">
-          <div class="title">提交时跳过 pre-commit hook</div><code class="code">git commit -n</code>
+          <div class="title">创建软链接</div><code class="code">ln -s &lt;target&gt; &lt;link-name&gt;</code>
         </div>
       </div>
       <div class="block">
-        <h3>日志</h3>
+        <h3>进程与线程</h3>
         <div class="item">
-          <div class="title">显示提交日志</div><code class="code">git log</code>
+          <div class="title">打印实时进程信息</div><code class="code">top</code>
         </div>
         <div class="item">
-          <div class="title">显示某文件的提交日志</div><code class="code">git log -p &lt;file&gt;</code>
+          <div class="title">BSD 格式打印所有进程信息</div><code class="code">ps aux</code>
         </div>
         <div class="item">
-          <div class="title">以图表形式显示提交日志</div><code class="code">git log --graph --all --oneline --decorate</code>
+          <div class="title">标准格式打印所有进程信息</div><code class="code">ps -ef</code>
         </div>
         <div class="item">
-          <div class="title">显示每次提交的对象信息</div><code class="code">git log --pretty=raw</code>
+          <div class="title">打印 root 用户的所有进程信息</div><code class="code">ps -U root -u root</code>
         </div>
         <div class="item">
-          <div class="title">显示某个时间段的提交信息</div><code class="code">git log --since '2 days ago'</code>
-        </div>
-        <div class="item">
-          <div class="title">显示指定作者的提交信息</div><code class="code">git log --author=&lt;author&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">根据提交信息中的关键字查找</div><code class="code">git log --grep=&lt;keyword&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">列出二者特有的提交</div><code class="code">git log master...develop</code>
-        </div>
-        <div class="item">
-          <div class="title">列出 branch 有而 branch2 没有的提交</div><code class="code">git log branch2..branch</code>
-        </div>
-        <div class="item">
-          <div class="title">仅显示 merge commit</div><code class="code">git log --merges</code>
-        </div>
-        <div class="item">
-          <div class="title">统计每个作者的提交情况</div><code class="code">git shortlog</code>
-        </div>
-        <div class="item">
-          <div class="title">统计每个作者的提交个数</div><code class="code">git shortlog -sn</code>
+          <div class="title">打印进程树</div><code class="code">ps -ejH</code>
         </div>
       </div>
       <div class="block">
-        <h3>标签</h3>
+        <h3>network &amp; socket</h3>
         <div class="item">
-          <div class="title">列出所有标签并显示标签信息</div><code class="code">git tag -ln</code>
+          <div class="title">测试网络状况</div><code class="code">ping www.zhihu.com</code>
         </div>
         <div class="item">
-          <div class="title">添加一个标签</div><code class="code">git tag -a v1.0.0 -m &lt;message&gt;</code>
+          <div class="title">network statistic，打印网络连接信息</div><code class="code">netstat</code>
         </div>
         <div class="item">
-          <div class="title">在某个 commit 上添加一个标签</div><code class="code">git tag v0.9.0 &lt;commit&gt;</code>
+          <div class="title">打印所有的 TCP 连接</div><code class="code">netstat -tan</code>
         </div>
         <div class="item">
-          <div class="title">删除一个标签</div><code class="code">git tag -d v1.0.0</code>
+          <div class="title">socket statistic, 查看 socket 信息</div><code class="code">ss</code>
         </div>
         <div class="item">
-          <div class="title">查看某个标签信息</div><code class="code">git show v1.0.0</code>
+          <div class="title">打印统计信息</div><code class="code">ss -s</code>
         </div>
         <div class="item">
-          <div class="title">推送所有标签到远程仓库</div><code class="code">git push --tags</code>
+          <div class="title">打印所有的 TCP 连接</div><code class="code">ss -at</code>
         </div>
         <div class="item">
-          <div class="title">使用最近的标签描述本次提交</div><code class="code">git describe</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>追责（甩锅）</h3>
-        <div class="item">
-          <div class="title">找到最后一次提交的作者</div><code class="code">git blame &lt;file&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">找到具体某一段的最后一次提交</div><code class="code">git blame -L 10,18 &lt;file&gt;</code>
-        </div>
-        <div class="item">
-          <div class="title">查找文件的修改历史及明细</div><code class="code">git log -p &lt;file&gt;</code>
+          <div class="title">打印特定状态的 TCP 连接</div><code class="code">ss -o state closed</code>
         </div>
       </div>
       <div class="block">
-        <h3>确认坏的提交</h3>
+        <h3>curl &amp; wget</h3>
         <div class="item">
-          <div class="title">二分查找坏的提交</div><code class="code">git bisect start &lt;br&gt; git checkout HEAD~20 &lt;br&gt; git bisect good &lt;br&gt; git bisect bad &lt;br&gt; git bisect reset</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>暂存区文件</h3>
-        <div class="item">
-          <div class="title">列出暂存区文件</div><code class="code">git ls-files</code>
+          <div class="title">从远程获取到内容</div><code class="code">curl &lt;url&gt;</code>
         </div>
         <div class="item">
-          <div class="title">列出忽略文件与未追踪文件</div><code class="code">git ls-files -o</code>
+          <div class="title">打印完整报文</div><code class="code">curl -v &lt;url&gt;</code>
         </div>
         <div class="item">
-          <div class="title">子目录中显示所在位置</div><code class="code">git ls-files --full-name</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>git 对象</h3>
-        <div class="item">
-          <div class="title">获取改摘要信息的类型</div><code class="code">git cat-file -t &lt;hash&gt;</code>
+          <div class="title">下载远程文件到本地</div><code class="code">curl -O &lt;url&gt;</code>
         </div>
         <div class="item">
-          <div class="title">获取改摘要信息的内容</div><code class="code">git cat-file -p &lt;hash&gt;</code>
+          <div class="title">只打印响应报文</div><code class="code">curl -I &lt;url&gt;</code>
         </div>
-      </div>
-      <div class="block">
-        <h3>查找</h3>
         <div class="item">
-          <div class="title">在已追踪文件中查找关键字并指明行号</div><code class="code">git grep -n hello</code>
-        </div>
-      </div>
-      <div class="block">
-        <h3>打包</h3>
-        <div class="item">
-          <div class="title">打包</div><code class="code">git archive -o arch.zip HEAD</code>
+          <div class="title">整站下载</div><code class="code">wget -m www.zhihu.com</code>
         </div>
       </div>
     </div>

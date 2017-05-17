@@ -33,7 +33,7 @@ gulp.task('markdown', () => {
   return sheets.map(sheet =>
     gulp.src('src/markdown-template.pug')
       .pipe(pug({
-        data: require('./sheets/git.json'),
+        data: require(`./sheets/${sheet}.json`),
         pretty: true
       }))
       .pipe(rename({

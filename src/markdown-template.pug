@@ -15,7 +15,9 @@ each collection, cid in collections
   each item, id in collection.commands
     div(id=`${cid}-${id}`)
     h4= item.title
+    = '\n'
     .
       ``` sh
       !{item.command}
       ```
+    = '\n'

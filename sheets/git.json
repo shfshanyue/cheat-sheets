@@ -353,6 +353,10 @@
           "command": "git merge -no-ff develop"
         },
         {
+          "title": "合并最近切换分支",
+          "command": "git merge -"
+        },
+        {
           "title": "变基合并 develop 分支",
           "command": "git rebase develop"
         },
@@ -467,6 +471,10 @@
         {
           "title": "根据提交信息中的关键字查找",
           "command": "git log --grep=<keyword>"
+        },
+        {
+          "title": "根据提交源码中的关键字查找",
+          "command": "git log -S <keyword>"
         },
         {
           "title": "列出二者特有的提交",

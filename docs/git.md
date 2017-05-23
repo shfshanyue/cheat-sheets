@@ -108,8 +108,9 @@
 <ul>
   <li><a href="#12-0">合并 develop 分支到本分支</a></li>
   <li><a href="#12-1">强制合并分支后生成 merge commit</a></li>
-  <li><a href="#12-2">变基合并 develop 分支</a></li>
-  <li><a href="#12-3">变基进入交互式界面</a></li>
+  <li><a href="#12-2">合并最近切换分支</a></li>
+  <li><a href="#12-3">变基合并 develop 分支</a></li>
+  <li><a href="#12-4">变基进入交互式界面</a></li>
 </ul>
 <h4>远程仓库</h4>
 <ul>
@@ -144,11 +145,12 @@
   <li><a href="#16-4">显示某个时间段的提交信息</a></li>
   <li><a href="#16-5">显示指定作者的提交信息</a></li>
   <li><a href="#16-6">根据提交信息中的关键字查找</a></li>
-  <li><a href="#16-7">列出二者特有的提交</a></li>
-  <li><a href="#16-8">列出 branch 有而 branch2 没有的提交</a></li>
-  <li><a href="#16-9">仅显示 merge commit</a></li>
-  <li><a href="#16-10">统计每个作者的提交情况</a></li>
-  <li><a href="#16-11">统计每个作者的提交个数</a></li>
+  <li><a href="#16-7">根据提交源码中的关键字查找</a></li>
+  <li><a href="#16-8">列出二者特有的提交</a></li>
+  <li><a href="#16-9">列出 branch 有而 branch2 没有的提交</a></li>
+  <li><a href="#16-10">仅显示 merge commit</a></li>
+  <li><a href="#16-11">统计每个作者的提交情况</a></li>
+  <li><a href="#16-12">统计每个作者的提交个数</a></li>
 </ul>
 <h4>标签</h4>
 <ul>
@@ -680,13 +682,20 @@ git merge -no-ff develop
 ```
 
 <div id="12-2"></div>
+<h4>合并最近切换分支</h4>
+
+``` sh
+git merge -
+```
+
+<div id="12-3"></div>
 <h4>变基合并 develop 分支</h4>
 
 ``` sh
 git rebase develop
 ```
 
-<div id="12-3"></div>
+<div id="12-4"></div>
 <h4>变基进入交互式界面</h4>
 
 ``` sh
@@ -852,34 +861,41 @@ git log --grep=<keyword>
 ```
 
 <div id="16-7"></div>
+<h4>根据提交源码中的关键字查找</h4>
+
+``` sh
+git log -S <keyword>
+```
+
+<div id="16-8"></div>
 <h4>列出二者特有的提交</h4>
 
 ``` sh
 git log master...develop
 ```
 
-<div id="16-8"></div>
+<div id="16-9"></div>
 <h4>列出 branch 有而 branch2 没有的提交</h4>
 
 ``` sh
 git log branch2..branch
 ```
 
-<div id="16-9"></div>
+<div id="16-10"></div>
 <h4>仅显示 merge commit</h4>
 
 ``` sh
 git log --merges
 ```
 
-<div id="16-10"></div>
+<div id="16-11"></div>
 <h4>统计每个作者的提交情况</h4>
 
 ``` sh
 git shortlog
 ```
 
-<div id="16-11"></div>
+<div id="16-12"></div>
 <h4>统计每个作者的提交个数</h4>
 
 ``` sh

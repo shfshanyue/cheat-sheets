@@ -255,6 +255,9 @@
           <div class="title">强制合并分支后生成 merge commit</div><code class="code">git merge -no-ff develop</code>
         </div>
         <div class="item">
+          <div class="title">合并最近切换分支</div><code class="code">git merge -</code>
+        </div>
+        <div class="item">
           <div class="title">变基合并 develop 分支</div><code class="code">git rebase develop</code>
         </div>
         <div class="item">
@@ -337,6 +340,9 @@
         </div>
         <div class="item">
           <div class="title">根据提交信息中的关键字查找</div><code class="code">git log --grep=&lt;keyword&gt;</code>
+        </div>
+        <div class="item">
+          <div class="title">根据提交源码中的关键字查找</div><code class="code">git log -S &lt;keyword&gt;</code>
         </div>
         <div class="item">
           <div class="title">列出二者特有的提交</div><code class="code">git log master...develop</code>

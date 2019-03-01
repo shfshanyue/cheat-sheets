@@ -10,7 +10,7 @@ const revReplace = require('gulp-rev-replace')
 
 const rename = require('gulp-rename')
 
-const sheets = ['git', 'command']
+const sheets = ['git', 'linux']
 
 gulp.task('view', ['style'], () => {
   return sheets.map(sheet =>

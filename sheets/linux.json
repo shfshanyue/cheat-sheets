@@ -303,18 +303,18 @@
         },
         {
           "command": "curl -v <url>",
-          "title": "打印完整报文"
+          "title": "打印完整http报文"
         },
         {
-          "command": "curl -O <url>",
+          "command": "curl -o file <url>",
           "title": "下载远程文件到本地"
         },
         {
           "command": "curl -I <url>",
-          "title": "只打印响应报文"
+          "title": "只打印响应头"
         },
         {
-          "command": "wget -m www.zhihu.com",
+          "command": "wget -m shici.xiange.tech",
           "title": "整站下载"
         }
       ]

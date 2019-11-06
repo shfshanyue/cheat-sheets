@@ -1,8 +1,8 @@
 {
   "title": "Linux Command Cheat Sheet",
   "repo": "https://github.com/shfshanyue/cheat-sheets",
-  "url": "https://shfshanyue.github.io/cheat-sheets/command",
-  "doc": "https://github.com/shfshanyue/cheat-sheets/blob/master/docs/command.md",
+  "url": "https://shfshanyue.github.io/cheat-sheets/linux",
+  "doc": "https://github.com/shfshanyue/cheat-sheets/blob/master/docs/linux.md",
   "collections": [
     {
       "title": "操作目录",

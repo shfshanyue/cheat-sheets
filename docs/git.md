@@ -188,21 +188,18 @@
 <h2>初始化仓库</h2>
 <div id="0-0"></div>
 <h4>初始化仓库</h4>
-
 ``` sh
 git init
 ```
 
 <div id="0-1"></div>
 <h4>初始化裸仓库</h4>
-
 ``` sh
 git init --bare
 ```
 
 <div id="0-2"></div>
 <h4>克隆仓库</h4>
-
 ``` sh
 git clone <git-repo>
 ```
@@ -210,70 +207,60 @@ git clone <git-repo>
 <h2>配置</h2>
 <div id="1-0"></div>
 <h4>编辑配置文件</h4>
-
 ``` sh
 git config [--global] -e
 ```
 
 <div id="1-1"></div>
 <h4>列出配置信息</h4>
-
 ``` sh
 git config -l
 ```
 
 <div id="1-2"></div>
 <h4>获取相应的配置</h4>
-
 ``` sh
 git config --get core.editor
 ```
 
 <div id="1-3"></div>
 <h4>配置用户邮箱</h4>
-
 ``` sh
 git config --global user.email <mail>
 ```
 
 <div id="1-4"></div>
 <h4>配置用户名</h4>
-
 ``` sh
 git config --global user.name <name>
 ```
 
 <div id="1-5"></div>
 <h4>输出彩色信息</h4>
-
 ``` sh
 git config color.ui true
 ```
 
 <div id="1-6"></div>
 <h4>设置文件名大小写敏感</h4>
-
 ``` sh
 git config core.ignoreCase false
 ```
 
 <div id="1-7"></div>
 <h4>设置推送策略为 simple</h4>
-
 ``` sh
 git config push.default simple
 ```
 
 <div id="1-8"></div>
 <h4>设置 git 的编辑器是 vim</h4>
-
 ``` sh
 git config --global core.editor vim
 ```
 
 <div id="1-9"></div>
 <h4>设置命令别名</h4>
-
 ``` sh
 git config --global alias.co checkout
 ```
@@ -281,35 +268,30 @@ git config --global alias.co checkout
 <h2>忽略文件</h2>
 <div id="2-0"></div>
 <h4>添加本项目的忽略文件</h4>
-
 ``` sh
 vim .gitignore
 ```
 
 <div id="2-1"></div>
 <h4>添加本项目的忽略文件并不把此文件纳入版本管理</h4>
-
 ``` sh
 vim .git/info/exclude
 ```
 
 <div id="2-2"></div>
 <h4>设置全局忽略文件</h4>
-
 ``` sh
 git config --global core.excludesfile ~/.gitignore
 ```
 
 <div id="2-3"></div>
 <h4>对已加入版本管理的文件不做更改检查</h4>
-
 ``` sh
 git update-index --assume-unchanged <file>
 ```
 
 <div id="2-4"></div>
 <h4>对已加入版本管理的文件做更改检查</h4>
-
 ``` sh
 git update-index --no-assume-unchanged <file>
 ```
@@ -317,42 +299,36 @@ git update-index --no-assume-unchanged <file>
 <h2>添加删除移动文件</h2>
 <div id="3-0"></div>
 <h4>添加所有文件到暂存区，包括未追踪文件</h4>
-
 ``` sh
 git add -A
 ```
 
 <div id="3-1"></div>
 <h4>更新暂存区文件</h4>
-
 ``` sh
 git add -u
 ```
 
 <div id="3-2"></div>
 <h4>交互式添加文件到暂存区</h4>
-
 ``` sh
 git add -p
 ```
 
 <div id="3-3"></div>
 <h4>工作区与暂存区删除文件</h4>
-
 ``` sh
 git rm <file>
 ```
 
 <div id="3-4"></div>
 <h4>仅暂存区删除文件</h4>
-
 ``` sh
 git rm --cached <file>
 ```
 
 <div id="3-5"></div>
 <h4>重命名暂存区文件</h4>
-
 ``` sh
 git mv <file> <file1>
 ```
@@ -360,28 +336,24 @@ git mv <file> <file1>
 <h2>工作区状态</h2>
 <div id="4-0"></div>
 <h4>查看工作区的信息</h4>
-
 ``` sh
 git status
 ```
 
 <div id="4-1"></div>
 <h4>查看工作区信息并显示分支及追踪信息</h4>
-
 ``` sh
 git status -sb
 ```
 
 <div id="4-2"></div>
 <h4>并查看忽略文件的信息</h4>
-
 ``` sh
 git status --ignored
 ```
 
 <div id="4-3"></div>
 <h4>列出忽略文件</h4>
-
 ``` sh
 git check-ignore *
 ```
@@ -389,42 +361,36 @@ git check-ignore *
 <h2>显示更改</h2>
 <div id="5-0"></div>
 <h4>显示工作区与暂存区的不同</h4>
-
 ``` sh
 git diff
 ```
 
 <div id="5-1"></div>
 <h4>显示暂存区与本地仓库的不同</h4>
-
 ``` sh
 git diff --cached
 ```
 
 <div id="5-2"></div>
 <h4>显示工作区，暂存区与本地仓库的不同</h4>
-
 ``` sh
 git diff HEAD
 ```
 
 <div id="5-3"></div>
 <h4>仅显示改变的文件</h4>
-
 ``` sh
 git diff --name-only
 ```
 
 <div id="5-4"></div>
 <h4>比较两次提交的差异</h4>
-
 ``` sh
 git diff <commit> <commit>
 ```
 
 <div id="5-5"></div>
 <h4>显示某次 commit 所做的更改</h4>
-
 ``` sh
 git show <commit>
 ```
@@ -432,21 +398,18 @@ git show <commit>
 <h2>列出文件信息</h2>
 <div id="6-0"></div>
 <h4>列出暂存区文件</h4>
-
 ``` sh
 git ls-files
 ```
 
 <div id="6-1"></div>
 <h4>列出忽略文件与未追踪文件</h4>
-
 ``` sh
 git ls-files -o
 ```
 
 <div id="6-2"></div>
 <h4>子目录中显示所在位置</h4>
-
 ``` sh
 git ls-files --full-name
 ```
@@ -454,35 +417,30 @@ git ls-files --full-name
 <h2>储藏与恢复</h2>
 <div id="7-0"></div>
 <h4>储藏(stash)工作区相对暂存区更改的文件</h4>
-
 ``` sh
 git stash
 ```
 
 <div id="7-1"></div>
 <h4>储藏文件并添加描述信息</h4>
-
 ``` sh
 git stash save <message>
 ```
 
 <div id="7-2"></div>
 <h4>恢复最后一次储藏的文件</h4>
-
 ``` sh
 git stash apply
 ```
 
 <div id="7-3"></div>
 <h4>恢复最后一次储藏的文件并删除此次储存记录</h4>
-
 ``` sh
 git stash pop
 ```
 
 <div id="7-4"></div>
 <h4>查看储藏列表</h4>
-
 ``` sh
 git stash list
 ```
@@ -490,42 +448,36 @@ git stash list
 <h2>恢复工作区</h2>
 <div id="8-0"></div>
 <h4>重置工作区某文件</h4>
-
 ``` sh
 git checkout -- <file>
 ```
 
 <div id="8-1"></div>
 <h4>重置工作区</h4>
-
 ``` sh
 git checkout .
 ```
 
 <div id="8-2"></div>
 <h4>列出将要清除的未追踪文件</h4>
-
 ``` sh
 git clean -n
 ```
 
 <div id="8-3"></div>
 <h4>清除未追踪文件</h4>
-
 ``` sh
 git clean -f
 ```
 
 <div id="8-4"></div>
 <h4>清除忽略文件</h4>
-
 ``` sh
 git clean -Xf
 ```
 
 <div id="8-5"></div>
 <h4>清除未追踪目录及文件</h4>
-
 ``` sh
 git clean -df
 ```
@@ -533,42 +485,36 @@ git clean -df
 <h2>回退版本</h2>
 <div id="9-0"></div>
 <h4>重置暂存区</h4>
-
 ``` sh
 git reset
 ```
 
 <div id="9-1"></div>
 <h4>重置工作区和暂存区</h4>
-
 ``` sh
 git reset --hard
 ```
 
 <div id="9-2"></div>
 <h4>恢复本分支到某次提交，重置工作区与暂存区</h4>
-
 ``` sh
 git reset --hard <commit-ish>
 ```
 
 <div id="9-3"></div>
 <h4>恢复本分支到某次提交</h4>
-
 ``` sh
 git reset --soft <commit-ish>
 ```
 
 <div id="9-4"></div>
 <h4>恢复本分支到某次提交，重置暂存区</h4>
-
 ``` sh
 git reset --mixed <commit-ish>
 ```
 
 <div id="9-5"></div>
 <h4>反向恢复一个提交并生成新的提交</h4>
-
 ``` sh
 git revert <commit>
 ```
@@ -576,63 +522,54 @@ git revert <commit>
 <h2>分支</h2>
 <div id="10-0"></div>
 <h4>列出本地分支</h4>
-
 ``` sh
 git branch
 ```
 
 <div id="10-1"></div>
 <h4>列出本地分支与追踪关系</h4>
-
 ``` sh
 git branch -vv
 ```
 
 <div id="10-2"></div>
 <h4>列出远程分支</h4>
-
 ``` sh
 git branch -r
 ```
 
 <div id="10-3"></div>
 <h4>列出所有分支</h4>
-
 ``` sh
 git branch -a
 ```
 
 <div id="10-4"></div>
 <h4>建立分支不切换工作区</h4>
-
 ``` sh
 git branch <branch>
 ```
 
 <div id="10-5"></div>
 <h4>删除已被合并的分支</h4>
-
 ``` sh
 git branch -d <branch>
 ```
 
 <div id="10-6"></div>
 <h4>强制删除未被合并的分支</h4>
-
 ``` sh
 git branch -D <branch>
 ```
 
 <div id="10-7"></div>
 <h4>更改分支名字</h4>
-
 ``` sh
 git branch -m <newbranch>
 ```
 
 <div id="10-8"></div>
 <h4>设置追踪分支</h4>
-
 ``` sh
 git branch -u <upstream>
 ```
@@ -640,28 +577,24 @@ git branch -u <upstream>
 <h2>切换分支</h2>
 <div id="11-0"></div>
 <h4>切换分支</h4>
-
 ``` sh
 git checkout <branch>
 ```
 
 <div id="11-1"></div>
 <h4>建立分支并切换工作区</h4>
-
 ``` sh
 git checkout -b <branch>
 ```
 
 <div id="11-2"></div>
 <h4>切换到最近一次分支</h4>
-
 ``` sh
 git checkout -
 ```
 
 <div id="11-3"></div>
 <h4>建立无任何提交历史的分支</h4>
-
 ``` sh
 git checkout --orphan <branch>
 ```
@@ -669,35 +602,30 @@ git checkout --orphan <branch>
 <h2>合并分支</h2>
 <div id="12-0"></div>
 <h4>合并 develop 分支到本分支</h4>
-
 ``` sh
 git merge develop
 ```
 
 <div id="12-1"></div>
 <h4>强制合并分支后生成 merge commit</h4>
-
 ``` sh
 git merge -no-ff develop
 ```
 
 <div id="12-2"></div>
 <h4>合并最近切换分支</h4>
-
 ``` sh
 git merge -
 ```
 
 <div id="12-3"></div>
 <h4>变基合并 develop 分支</h4>
-
 ``` sh
 git rebase develop
 ```
 
 <div id="12-4"></div>
 <h4>变基进入交互式界面</h4>
-
 ``` sh
 git rebase -i
 ```
@@ -705,28 +633,24 @@ git rebase -i
 <h2>远程仓库</h2>
 <div id="13-0"></div>
 <h4>添加远程仓库并命名为 origin</h4>
-
 ``` sh
 git remote add origin <git-repo>
 ```
 
 <div id="13-1"></div>
 <h4>修改远程仓库的地址</h4>
-
 ``` sh
 git remote set-url origin <git-repo>
 ```
 
 <div id="13-2"></div>
 <h4>列出所有的远程仓库</h4>
-
 ``` sh
 git remote -v
 ```
 
 <div id="13-3"></div>
 <h4>列出远程仓库 origin 的详细信息</h4>
-
 ``` sh
 git remote show origin
 ```
@@ -734,42 +658,36 @@ git remote show origin
 <h2>推送与拉取</h2>
 <div id="14-0"></div>
 <h4>git config push.default simple</h4>
-
 ``` sh
 设置默认推送策略为 simple
 ```
 
 <div id="14-1"></div>
 <h4>推送 master 到远程仓库</h4>
-
 ``` sh
 git push origin master
 ```
 
 <div id="14-2"></div>
 <h4>推送到远程仓库并建立追踪关系</h4>
-
 ``` sh
 git push -u origin master
 ```
 
 <div id="14-3"></div>
 <h4>推送时忽略 pre-push hook</h4>
-
 ``` sh
 git push -n
 ```
 
 <div id="14-4"></div>
 <h4>从远程仓库拉取文件</h4>
-
 ``` sh
 git pull origin master
 ```
 
 <div id="14-5"></div>
 <h4>设置 rebase 模式拉取代码</h4>
-
 ``` sh
 git pull --rebase origin master
 ```
@@ -777,35 +695,30 @@ git pull --rebase origin master
 <h2>提交</h2>
 <div id="15-0"></div>
 <h4>提交</h4>
-
 ``` sh
 git commit -m <message>
 ```
 
 <div id="15-1"></div>
 <h4>追加提交重置提交信息</h4>
-
 ``` sh
 git commit --amend -m <message>
 ```
 
 <div id="15-2"></div>
 <h4>重置作者</h4>
-
 ``` sh
 git commit --amend --author=<mail> 
 ```
 
 <div id="15-3"></div>
 <h4>允许空提交</h4>
-
 ``` sh
 git commit --allow-empty
 ```
 
 <div id="15-4"></div>
 <h4>提交时跳过 pre-commit hook</h4>
-
 ``` sh
 git commit -n
 ```
@@ -813,91 +726,78 @@ git commit -n
 <h2>日志</h2>
 <div id="16-0"></div>
 <h4>显示提交日志</h4>
-
 ``` sh
 git log
 ```
 
 <div id="16-1"></div>
 <h4>显示某文件的提交日志</h4>
-
 ``` sh
 git log -p <file>
 ```
 
 <div id="16-2"></div>
 <h4>以图表形式显示提交日志</h4>
-
 ``` sh
 git log --graph --all --oneline --decorate
 ```
 
 <div id="16-3"></div>
 <h4>显示每次提交的对象信息</h4>
-
 ``` sh
 git log --pretty=raw
 ```
 
 <div id="16-4"></div>
 <h4>显示某个时间段的提交信息</h4>
-
 ``` sh
 git log --since '2 days ago'
 ```
 
 <div id="16-5"></div>
 <h4>显示指定作者的提交信息</h4>
-
 ``` sh
 git log --author=<author>
 ```
 
 <div id="16-6"></div>
 <h4>根据提交信息中的关键字查找</h4>
-
 ``` sh
 git log --grep=<keyword>
 ```
 
 <div id="16-7"></div>
 <h4>根据提交源码中的关键字查找</h4>
-
 ``` sh
 git log -S <keyword>
 ```
 
 <div id="16-8"></div>
 <h4>列出二者特有的提交</h4>
-
 ``` sh
 git log master...develop
 ```
 
 <div id="16-9"></div>
 <h4>列出 branch 有而 branch2 没有的提交</h4>
-
 ``` sh
 git log branch2..branch
 ```
 
 <div id="16-10"></div>
 <h4>仅显示 merge commit</h4>
-
 ``` sh
 git log --merges
 ```
 
 <div id="16-11"></div>
 <h4>统计每个作者的提交情况</h4>
-
 ``` sh
 git shortlog
 ```
 
 <div id="16-12"></div>
 <h4>统计每个作者的提交个数</h4>
-
 ``` sh
 git shortlog -sn
 ```
@@ -905,49 +805,42 @@ git shortlog -sn
 <h2>标签</h2>
 <div id="17-0"></div>
 <h4>列出所有标签并显示标签信息</h4>
-
 ``` sh
 git tag -ln
 ```
 
 <div id="17-1"></div>
 <h4>添加一个标签</h4>
-
 ``` sh
 git tag -a v1.0.0 -m <message>
 ```
 
 <div id="17-2"></div>
 <h4>在某个 commit 上添加一个标签</h4>
-
 ``` sh
 git tag v0.9.0 <commit>
 ```
 
 <div id="17-3"></div>
 <h4>删除一个标签</h4>
-
 ``` sh
 git tag -d v1.0.0
 ```
 
 <div id="17-4"></div>
 <h4>查看某个标签信息</h4>
-
 ``` sh
 git show v1.0.0
 ```
 
 <div id="17-5"></div>
 <h4>推送所有标签到远程仓库</h4>
-
 ``` sh
 git push --tags
 ```
 
 <div id="17-6"></div>
 <h4>使用最近的标签描述本次提交</h4>
-
 ``` sh
 git describe
 ```
@@ -955,21 +848,18 @@ git describe
 <h2>追责（甩锅）</h2>
 <div id="18-0"></div>
 <h4>找到最后一次提交的作者</h4>
-
 ``` sh
 git blame <file>
 ```
 
 <div id="18-1"></div>
 <h4>找到具体某一段的最后一次提交</h4>
-
 ``` sh
 git blame -L 10,18 <file>
 ```
 
 <div id="18-2"></div>
 <h4>查找文件的修改历史及明细</h4>
-
 ``` sh
 git log -p <file>
 ```
@@ -977,7 +867,6 @@ git log -p <file>
 <h2>确认坏的提交</h2>
 <div id="19-0"></div>
 <h4>二分查找坏的提交</h4>
-
 ``` sh
 git bisect start <br> git checkout HEAD~20 <br> git bisect good <br> git bisect bad <br> git bisect reset
 ```
@@ -985,14 +874,12 @@ git bisect start <br> git checkout HEAD~20 <br> git bisect good <br> git bisect 
 <h2>git 对象</h2>
 <div id="20-0"></div>
 <h4>获取改摘要信息的类型</h4>
-
 ``` sh
 git cat-file -t <hash>
 ```
 
 <div id="20-1"></div>
 <h4>获取改摘要信息的内容</h4>
-
 ``` sh
 git cat-file -p <hash>
 ```
@@ -1000,7 +887,6 @@ git cat-file -p <hash>
 <h2>查找</h2>
 <div id="21-0"></div>
 <h4>在已追踪文件中查找关键字并指明行号</h4>
-
 ``` sh
 git grep -n hello
 ```
@@ -1008,7 +894,6 @@ git grep -n hello
 <h2>打包</h2>
 <div id="22-0"></div>
 <h4>打包</h4>
-
 ``` sh
 git archive -o arch.zip HEAD
 ```

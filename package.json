@@ -14,7 +14,7 @@
   "devDependencies": {
     "autoprefixer": "^6.7.4",
     "gh-pages": "^0.12.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-postcss": "^6.3.0",
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
